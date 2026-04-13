@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
-  branch: main # Branch to update (optional; defaults to main)
+  name: github
+  repo: saheeel/kensho-new # REPLACE THIS with your github repo path (e.g. saheeel/kensho-new)
+  branch: main
+  base_url: https://github-auth-kensho.vercel.app/ # Example Auth provider URL
 
 media_folder: "public/blogs" # Media files will be stored in the repo under public/blogs
 public_folder: "/blogs" # The src attribute for specified images will be /blogs/filename.ext
