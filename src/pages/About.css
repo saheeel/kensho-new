@@ -1,0 +1,118 @@
+.about-page {
+  padding-top: 15vh;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero {
+  padding: 10vh 5vw;
+}
+
+.about-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 10vw, 12rem);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  margin-bottom: 2rem;
+}
+
+.about-manifesto {
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: var(--text-secondary);
+  max-width: 900px;
+  line-height: 1.4;
+  margin-left: auto;
+  font-weight: 300;
+}
+
+.about-manifesto .text-accent {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-transform: lowercase;
+}
+
+/* Founders Section */
+.founders-section {
+  padding: 15vh 5vw;
+  background: var(--bg-secondary);
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 5vh;
+  display: block;
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5vw;
+}
+
+@media (max-width: 900px) {
+  .founder-grid { grid-template-columns: 1fr; }
+}
+
+.founder-card {
+  position: relative;
+}
+
+.founder-img-wrapper {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.founder-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), filter 1s ease;
+}
+
+.founder-card:hover .founder-img-wrapper img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.founder-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.founder-info h3 {
+  font-size: clamp(2rem, 3vw, 4rem);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.founder-info p {
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.founder-bio {
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 400px;
+}

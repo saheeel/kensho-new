@@ -1,0 +1,119 @@
+.contact-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  display: flex;
+}
+
+@media(max-width: 900px) {
+  .contact-page { flex-direction: column; }
+}
+
+.contact-left {
+  width: 50%;
+  padding: 20vh 5vw;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media(max-width: 900px) {
+  .contact-left { width: 100%; height: auto; position: relative; padding-bottom: 10vh; }
+}
+
+.contact-title {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 8vw, 10rem);
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  line-height: 0.9;
+}
+
+.contact-info-block {
+  margin-top: 4rem;
+}
+
+.contact-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--accent-primary);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.contact-detail {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.contact-detail a {
+  transition: color 0.3s;
+}
+
+.contact-detail a:hover {
+  color: var(--accent-primary);
+}
+
+.contact-right {
+  width: 50%;
+  background: var(--bg-secondary);
+  padding: 20vh 5vw;
+  min-height: 100vh;
+  border-left: 1px solid var(--border-color);
+}
+
+@media(max-width: 900px) {
+  .contact-right { width: 100%; border-left: none; border-top: 1px solid var(--border-color); }
+}
+
+.form-header {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+  line-height: 1.6;
+}
+
+.clean-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.input-block {
+  position: relative;
+}
+
+.clean-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  transition: border-color 0.3s;
+}
+
+.clean-input:focus {
+  outline: none;
+  border-bottom-color: var(--accent-primary);
+}
+
+.clean-input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 300;
+}
+
+textarea.clean-input {
+  resize: vertical;
+  min-height: 150px;
+}
