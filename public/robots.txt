@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block CMS admin from indexing
+Disallow: /admin/
+Disallow: /admin
+
+# Sitemap location
+Sitemap: https://kensho-new.vercel.app/sitemap.xml

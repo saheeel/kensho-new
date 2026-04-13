@@ -42,7 +42,14 @@ const BlogDetail = () => {
     <div className="blog-detail-page">
       <div className="blog-hero">
         <div className="blog-hero-overlay"></div>
-        <img src={blog.image} alt={blog.title} className="blog-hero-img" />
+        <img
+            src={blog.image}
+            alt={blog.title}
+            className="blog-hero-img"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
         <div className="container">
           <div className="blog-hero-top">
             <Link to="/blogs" className="back-link">

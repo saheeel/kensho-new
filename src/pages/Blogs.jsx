@@ -48,9 +48,16 @@ const Blogs = () => {
         <div className="blogs-grid">
           {blogs.map((blog, index) => (
             <article key={blog.id} className={`blog-card animate-fade-in-up stagger-${index + 1}`}>
-              <Link to={`/blogs/${blog.id}`}>
+              <Link to={`/blogs/${blog.id}`} aria-label={`Read: ${blog.title}`}>
                 <div className="blog-image">
-                  <img src={blog.image} alt={blog.title} />
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="280"
+                  />
                   <span className="blog-category">{blog.category}</span>
                 </div>
               </Link>
