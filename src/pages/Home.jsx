@@ -277,20 +277,6 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="clients-section">
-          <div className="clients-header">
-            <h3>WHAT CLIENTS SAY</h3>
-          </div>
-          <div className="clients-marquee-container">
-            {[...clientsData, ...clientsData].map((client, idx) => (
-              <div key={idx} className="client-card">
-                <p className="client-quote">{client.quote}</p>
-                <p className="client-name">— {client.name}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <section className="services-section">
           <div className="container" style={{ marginBottom: '4rem' }}>
             <h3 className="section-subtitle">OUR SPECIALIZATIONS / WHAT WE DO</h3>
@@ -330,6 +316,20 @@ const Home = () => {
           
           <div style={{ marginTop: '5rem', textAlign: 'right' }}>
             <Link to="/contact" className="btn-sleek">INITIATE PROJECT →</Link>
+          </div>
+        </section>
+
+        <section className="clients-section">
+          <div className="clients-header">
+            <h3>WHAT CLIENTS SAY</h3>
+          </div>
+          <div className="clients-marquee-container">
+            {[...clientsData, ...clientsData].map((client, idx) => (
+              <div key={idx} className="client-card">
+                <p className="client-quote">{client.quote}</p>
+                <p className="client-name">— {client.name}</p>
+              </div>
+            ))}
           </div>
         </section>
 
