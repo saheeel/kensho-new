@@ -257,7 +257,16 @@ const Home = () => {
             <h3 className="section-subtitle animate-fade-in">OUR SQUAD / THE ARCHITECTS</h3>
           </div>
           <div className="visual-block">
-            <img ref={visualRef} src="/kenshogroup.jpg" alt="Our Team" className="visual-image" />
+            <img 
+              ref={visualRef} 
+              src="/kenshogroup.jpg" 
+              alt="Our Team" 
+              className="visual-image" 
+              loading="lazy"
+              decoding="async"
+              width="1400"
+              height="800"
+            />
           </div>
         </section>
 
@@ -327,7 +336,14 @@ const Home = () => {
             {newsData.map((news, idx) => (
               <Link to={`/blogs/${news.id}`} key={idx} className="news-card">
                 <div className="news-image-container">
-                  <img src={news.image} alt={news.title} />
+                  <img 
+                    src={news.image} 
+                    alt={news.title} 
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="400"
+                  />
                 </div>
                 <div className="news-meta">
                   <span className="category">{news.category}</span>
