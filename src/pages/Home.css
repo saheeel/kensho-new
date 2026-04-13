@@ -407,12 +407,54 @@
   object-fit: cover;
 }
 
-/* Image Parallax Block */
+/* Team Visual Block */
+.team-section {
+  padding: 0 5vw 10vh;
+}
+
+.team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.team-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 7rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.team-header p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: right;
+  max-width: 260px;
+}
+
+@media (max-width: 768px) {
+  .team-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .team-header p { text-align: left; }
+}
+
 .visual-block {
-  width: 90vw;
-  max-width: 800px;
-  aspect-ratio: 16 / 9;
-  margin: 10vh auto;
+  width: 100%;
+  max-width: 1400px;
+  aspect-ratio: 16 / 8;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
@@ -420,11 +462,12 @@
 
 .visual-image {
   position: absolute;
-  top: -10%;
+  top: -8%;
   left: 0;
   width: 100%;
   height: 120%;
   object-fit: cover;
+  object-position: center 25%;
   filter: grayscale(100%);
   transition: filter 0.8s ease;
 }

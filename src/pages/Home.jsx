@@ -252,8 +252,14 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="visual-block">
-          <img ref={visualRef} src="/kenshogroup.jpg" alt="Our Team" className="visual-image" />
+        <section className="team-section">
+          <div className="team-header">
+            <h2>The People<br />Behind the Work.</h2>
+            <p>A team of strategists, creators & storytellers — based in Doha, Qatar.</p>
+          </div>
+          <div className="visual-block">
+            <img ref={visualRef} src="/kenshogroup.jpg" alt="The Kensho Media Team" className="visual-image" loading="lazy" />
+          </div>
         </section>
 
         <section className="clients-section">
