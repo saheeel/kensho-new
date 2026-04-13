@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -61,24 +61,24 @@ const Navbar = () => {
         
         <ul className="nav-links">
           <li>
-            <Link to="/" className="nav-item hover-target" data-text="HOME">
+            <NavLink to="/" className="nav-item hover-target" data-text="HOME">
               <span>HOME</span>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/about" className="nav-item hover-target" data-text="OUR AGENCY">
+            <NavLink to="/about" className="nav-item hover-target" data-text="OUR AGENCY">
               <span>OUR AGENCY</span>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/blogs" className="nav-item hover-target" data-text="INSIGHTS">
+            <NavLink to="/blogs" className="nav-item hover-target" data-text="INSIGHTS">
               <span>INSIGHTS</span>
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/contact" className="nav-item hover-target" data-text="TALK TO US">
+            <NavLink to="/contact" className="nav-item hover-target" data-text="TALK TO US">
               <span>TALK TO US</span>
-            </Link>
+            </NavLink>
           </li>
         </ul>
         
@@ -96,16 +96,16 @@ const Navbar = () => {
         <div className="mobile-menu-card">
           <ul className="mobile-nav-links">
             <li>
-              <Link to="/" className="mobile-nav-item hover-target">HOME</Link>
+              <NavLink to="/" className="mobile-nav-item hover-target">HOME</NavLink>
             </li>
             <li>
-              <Link to="/about" className="mobile-nav-item hover-target">OUR AGENCY</Link>
+              <NavLink to="/about" className="mobile-nav-item hover-target">OUR AGENCY</NavLink>
             </li>
             <li>
-              <Link to="/blogs" className="mobile-nav-item hover-target">INSIGHTS</Link>
+              <NavLink to="/blogs" className="mobile-nav-item hover-target">INSIGHTS</NavLink>
             </li>
             <li>
-              <Link to="/contact" className="mobile-nav-item hover-target">TALK TO US</Link>
+              <NavLink to="/contact" className="mobile-nav-item hover-target">TALK TO US</NavLink>
             </li>
           </ul>
           

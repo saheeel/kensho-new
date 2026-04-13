@@ -62,10 +62,35 @@
   text-transform: uppercase;
   letter-spacing: 0.2em;
   transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--accent-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .nav-item:hover {
   color: var(--accent-primary);
+}
+
+/* Specific active style for NavLink */
+.nav-item.active {
+  color: var(--accent-primary);
+}
+
+.nav-item.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .menu-trigger {
@@ -178,7 +203,8 @@
 .mobile-menu-overlay.open .mobile-nav-links li:nth-child(3) .mobile-nav-item { transition-delay: 0.3s; }
 .mobile-menu-overlay.open .mobile-nav-links li:nth-child(4) .mobile-nav-item { transition-delay: 0.4s; }
 
-.mobile-nav-item:hover {
+.mobile-nav-item:hover,
+.mobile-nav-item.active {
   color: var(--accent-primary, #a8a8a8);
 }
 
