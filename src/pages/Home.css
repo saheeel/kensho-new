@@ -40,16 +40,16 @@
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
-    align-items: flex-end; /* Keep everything right-aligned on mobile */
+    align-items: flex-start; /* Switch back to left alignment */
     bottom: 6vh;
     gap: 2rem;
   }
   .hero-title h1 {
-    font-size: clamp(3.5rem, 18vw, 10rem); /* Make H1 very big for mobile */
-    text-align: right;
+    font-size: clamp(4rem, 22vw, 12rem); /* Even bigger for mobile impact */
+    text-align: left;
   }
   .hero-sub {
-    text-align: right;
+    text-align: left;
     max-width: 100%;
   }
 }
