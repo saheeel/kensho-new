@@ -133,19 +133,28 @@
   }
 }
 
-.who-sticky-col {
-  width: 45%;
-  position: sticky;
-  top: 25vh;
+.who-sticky-inner {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
 }
 
-@media(max-width: 900px) {
-  .who-sticky-col {
-    position: relative;
-    width: 100%;
-    top: 0;
-    margin-bottom: 10vh;
-  }
+.who-progress-container {
+  width: 2px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  margin-top: 1rem;
+}
+
+.who-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--accent-primary);
+  box-shadow: 0 0 15px var(--accent-primary);
 }
 
 .who-sticky-col h2 {
@@ -154,7 +163,7 @@
   font-weight: 400;
   color: var(--text-primary);
   line-height: 0.9;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.05em;
 }
 
 .who-sticky-col span.italic-accent {
@@ -162,6 +171,16 @@
   font-style: italic;
   text-transform: lowercase;
   color: var(--accent-primary);
+}
+
+@media(max-width: 900px) {
+  .who-sticky-inner {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  .who-progress-container {
+    height: 100px;
+  }
 }
 
 .who-scroll-col {
@@ -177,31 +196,41 @@
 }
 
 .who-block {
-  margin-bottom: 20vh;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 4rem;
+  margin-bottom: 30vh;
+  position: relative;
+  padding-left: 2rem;
 }
 
 .who-block:last-child {
-  border-bottom: none;
   margin-bottom: 0;
 }
 
-.who-block h3 {
+.block-num {
   font-family: var(--font-body);
-  font-size: 1rem;
-  letter-spacing: 0.2em;
-  font-weight: 500;
-  margin-bottom: 2rem;
+  font-size: 0.8rem;
   color: var(--accent-primary);
+  letter-spacing: 0.3em;
+  display: block;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.who-block h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 300;
+  margin-bottom: 3rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 .who-block p {
   font-family: var(--font-body);
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
-  color: var(--text-primary);
-  line-height: 1.6;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--text-secondary);
+  line-height: 1.8;
   font-weight: 300;
+  max-width: 600px;
 }
 
 /* Clients / Trust / Testimonials Section */
