@@ -86,8 +86,13 @@ const Navbar = () => {
           className={`menu-trigger hover-target ${isMobileMenuOpen ? 'active' : ''}`} 
           data-cursor-text={isMobileMenuOpen ? 'CLOSE' : 'OPEN'}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle Menu"
         >
-          {isMobileMenuOpen ? 'CLOSE' : 'MENU'}
+          <div className="nav-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </button>
       </div>
 
