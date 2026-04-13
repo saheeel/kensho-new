@@ -690,24 +690,32 @@
     padding: 12vh 5vw;
   }
 
-  /* Services — inline image when tapped */
+  /* Services — Image first, then info */
   .service-item {
-    grid-template-columns: 40px 1fr;
-    padding: 2rem 0;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+    gap: 1.5rem;
   }
 
-  .service-mobile-img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 8px;
-    margin: 1.2rem 0 0.5rem;
-    display: block;
+  .service-inline-img {
+    order: -2; /* Force image to the very top */
+    height: 350px;
+    margin-top: 0;
   }
 
-  /* Content always open on mobile */
-  .service-item .service-content {
+  .service-number {
+    order: -1; /* Number below image, above title */
+    padding-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .service-name {
+    margin-top: 0;
+    font-size: 2.2rem;
+  }
+
+  .service-content {
     grid-template-rows: 1fr !important;
   }
 

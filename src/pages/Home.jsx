@@ -279,7 +279,7 @@ const Home = () => {
 
         <section className="services-section">
           <div className="container" style={{ marginBottom: '4rem' }}>
-            <h3 className="section-subtitle">OUR SPECIALIZATIONS / WHAT WE DO</h3>
+            <h3 className="section-subtitle">OUR SPECIALIZATIONS <br/> WHAT WE DO</h3>
           </div>
           <div className="services-list">
             {servicesData.map((service, index) => (
