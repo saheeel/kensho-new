@@ -63,13 +63,14 @@
   letter-spacing: 0.2em;
   transition: color 0.3s ease;
   position: relative;
-  padding-bottom: 4px;
+  text-decoration: none;
 }
 
+/* Base underline (hidden by default) */
 .nav-item::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   left: 0;
   width: 100%;
   height: 1px;
@@ -79,18 +80,23 @@
   transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+/* Hover effect for non-active links */
 .nav-item:hover {
   color: var(--accent-primary);
 }
 
-/* Specific active style for NavLink */
+.nav-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ACTIVE State: Color only, NO underline */
 .nav-item.active {
-  color: var(--accent-primary);
+  color: var(--accent-primary) !important;
 }
 
 .nav-item.active::after {
-  transform: scaleX(1);
-  transform-origin: left;
+  display: none !important;
 }
 
 .menu-trigger {
