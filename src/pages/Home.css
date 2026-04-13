@@ -40,16 +40,17 @@
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
-    align-items: flex-start; /* Switch back to left alignment */
+    align-items: flex-start; /* Heading on the left */
     bottom: 6vh;
     gap: 2rem;
   }
   .hero-title h1 {
-    font-size: clamp(4rem, 22vw, 12rem); /* Even bigger for mobile impact */
+    font-size: clamp(4rem, 22vw, 12rem);
     text-align: left;
   }
   .hero-sub {
-    text-align: left;
+    align-self: flex-end; /* Push only the subtext to the right */
+    text-align: right;
     max-width: 100%;
   }
 }
