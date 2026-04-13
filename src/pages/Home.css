@@ -705,11 +705,12 @@
     display: block;
   }
 
-  .service-item.mobile-open .service-content {
-    grid-template-rows: 1fr;
+  /* Content always open on mobile */
+  .service-item .service-content {
+    grid-template-rows: 1fr !important;
   }
 
-  .service-item.mobile-open .service-name {
+  .service-name {
     color: var(--accent-primary);
   }
 

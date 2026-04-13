@@ -289,9 +289,8 @@ const Home = () => {
             {servicesData.map((service, index) => (
               <div 
                 key={index} 
-                className={`service-item hover-target ${mobileOpenService === index ? 'mobile-open' : ''}`}
+                className="service-item hover-target"
                 data-cursor-text="VIEW"
-                onClick={() => setMobileOpenService(mobileOpenService === index ? null : index)}
               >
                 <div className="service-number">{service.num} /</div>
                 <div>
@@ -307,7 +306,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                {/* Integrated Static Image */}
+                {/* Integrated Static Image - Always Visible */}
                 <img 
                   src={service.img} 
                   alt={service.title} 
