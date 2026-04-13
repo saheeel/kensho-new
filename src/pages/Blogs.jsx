@@ -1,13 +1,29 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import './Blogs.css';
-import matter from 'gray-matter';
-import { Buffer } from 'buffer';
 
-// Fix for gray-matter in some vite environments
-if (typeof window !== 'undefined') {
-  window.Buffer = Buffer;
-}
+// Custom lightweight parser to avoid "Buffer" errors in browser
+const parseFrontmatter = (fileContent) => {
+  const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
+  const match = fileContent.match(frontmatterRegex);
+  if (!match) return { data: {}, content: fileContent };
+
+  const frontmatterBlock = match[1];
+  const content = match[2];
+  const data = {};
+
+  frontmatterBlock.split('\n').forEach(line => {
+    const [key, ...valueParts] = line.split(':');
+    if (key && valueParts.length > 0) {
+      let value = valueParts.join(':').trim();
+      // Remove surrounding quotes
+      value = value.replace(/^["'](.*)["']$/, '$1');
+      data[key.trim()] = value;
+    }
+  });
+
+  return { data, content };
+};
 
 const Blogs = () => {
   // Load ALL markdown files from the content folder
@@ -16,17 +32,17 @@ const Blogs = () => {
   const blogs = Object.keys(blogFiles).map((path) => {
     try {
       const slug = path.split('/').pop().replace('.md', '');
-      const { data } = matter(blogFiles[path]);
+      const { data } = parseFrontmatter(blogFiles[path]);
       
       return {
         id: slug,
         ...data,
         rawDate: data.date ? new Date(data.date) : new Date(0),
-        date: data.date instanceof Date ? data.date.toLocaleDateString('en-US', {
+        date: data.date ? new Date(data.date).toLocaleDateString('en-US', {
           month: 'long',
           day: 'numeric',
           year: 'numeric'
-        }) : data.date || "No Date"
+        }) : "No Date"
       };
     } catch (e) {
       console.error("Error parsing blog:", path, e);
