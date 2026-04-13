@@ -11,7 +11,7 @@ if (typeof window !== 'undefined') {
 
 const Blogs = () => {
   // Load ALL markdown files using absolute root path for Vercel consistency
-  const blogFiles = import.meta.glob('/src/content/blogs/*.md', { as: 'raw', eager: true });
+  const blogFiles = import.meta.glob('/src/content/blogs/*.md', { query: '?raw', import: 'default', eager: true });
   
   console.log("Blogs found:", Object.keys(blogFiles).length);
   

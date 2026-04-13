@@ -125,8 +125,7 @@ const Home = () => {
     }
   ];
 
-  // Load the latest 3 blogs using absolute root path
-  const blogFiles = import.meta.glob('/src/content/blogs/*.md', { as: 'raw', eager: true });
+  const blogFiles = import.meta.glob('/src/content/blogs/*.md', { query: '?raw', import: 'default', eager: true });
   const newsData = Object.keys(blogFiles).map((path) => {
     const slug = path.split('/').pop().replace('.md', '');
     const { data } = matter(blogFiles[path]);

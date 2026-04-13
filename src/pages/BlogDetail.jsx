@@ -14,7 +14,7 @@ const BlogDetail = () => {
   const { id: slug } = useParams();
 
   // Load all markdown files using absolute root path
-  const blogFiles = import.meta.glob('/src/content/blogs/*.md', { as: 'raw', eager: true });
+  const blogFiles = import.meta.glob('/src/content/blogs/*.md', { query: '?raw', import: 'default', eager: true });
   
   // Find the file that matches the slug
   const filePath = Object.keys(blogFiles).find(path => path.endsWith(`${slug}.md`));
