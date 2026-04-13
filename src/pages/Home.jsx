@@ -20,6 +20,7 @@ const Home = () => {
   const heroTextRefs = useRef([]);
   const statementWordsRef = useRef([]);
   const visualRef = useRef(null);
+  const servicesRef = useRef([]);
 
   useEffect(() => {
     // Elegant Hero Entrance
@@ -59,7 +60,7 @@ const Home = () => {
 
     // Huge Visual Block Parallax
     gsap.to(visualRef.current, {
-      y: '20%',
+      y: '15%',
       ease: 'none',
       scrollTrigger: {
         trigger: '.visual-block',
@@ -69,18 +70,25 @@ const Home = () => {
       }
     });
 
-    // Trailing Image QuickTo Follower
-    const xTo = gsap.quickTo('.trailing-image-wrapper', 'x', { duration: 0.4, ease: 'power3' });
-    const yTo = gsap.quickTo('.trailing-image-wrapper', 'y', { duration: 0.4, ease: 'power3' });
-    
-    const handleMouseMove = (e) => {
-      xTo(e.clientX);
-      yTo(e.clientY);
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
+    // Services Staggered Reveal
+    gsap.fromTo(servicesRef.current, 
+      { opacity: 0, y: 50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1, 
+        stagger: 0.1, 
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.services-section',
+          start: 'top 80%',
+        }
+      }
+    );
+
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
     };
 
   }, []);
@@ -285,12 +293,16 @@ const Home = () => {
         </section>
 
         <section className="services-section">
+          <div className="container" style={{ marginBottom: '4rem' }}>
+            <h3 className="section-subtitle">OUR SPECIALIZATIONS / WHAT WE DO</h3>
+          </div>
           <div className="services-list">
             {servicesData.map((service, index) => (
               <div 
                 key={index} 
                 className="service-item hover-target"
                 data-cursor-text="VIEW"
+                ref={el => servicesRef.current[index] = el}
               >
                 <div className="service-number">{service.num} /</div>
                 <div>

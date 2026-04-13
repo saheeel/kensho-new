@@ -327,16 +327,18 @@
 
 .service-inline-img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
   border-radius: 12px;
-  opacity: 0.8;
-  transition: opacity 0.3s ease, transform 0.5s ease;
+  opacity: 0.7;
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  filter: grayscale(100%);
 }
 
 .service-item:hover .service-inline-img {
   opacity: 1;
-  transform: scale(1.03);
+  transform: scale(1.05);
+  filter: grayscale(0%);
 }
 
 @media (max-width: 1024px) {
