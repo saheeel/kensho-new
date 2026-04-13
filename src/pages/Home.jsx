@@ -1,8 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import matter from 'gray-matter';
+import { Buffer } from 'buffer';
 import './Home.css';
+
+// Fix for gray-matter in some vite environments
+if (typeof window !== 'undefined') {
+  window.Buffer = Buffer;
+}
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -118,29 +125,21 @@ const Home = () => {
     }
   ];
 
-  const newsData = [
-    {
-      id: 3,
-      category: "Strategy",
-      date: "OCTOBER 12, 2025",
-      title: "The Death of Traditional Advertising: Why Community Building is the New Metric.",
-      image: "/blogs/strategy.png"
-    },
-    {
-      id: 1,
-      category: "Case Study",
-      date: "SEPTEMBER 28, 2025",
-      title: "How We Scaled Go Fitness Leads by 300% Using Hyper-Targeted Short-Form Content.",
-      image: "/blogs/marketing.png"
-    },
-    {
-      id: 2,
-      category: "Design",
-      date: "AUGUST 15, 2025",
-      title: "Psychology in Web Design: Architecting Digital Experiences That Convert Visitors.",
-      image: "/blogs/production.png"
-    }
-  ];
+  // Load the latest 3 blogs for the news section
+  const blogFiles = import.meta.glob('../content/blogs/*.md', { as: 'raw', eager: true });
+  const newsData = Object.keys(blogFiles).map((path) => {
+    const slug = path.split('/').pop().replace('.md', '');
+    const { data } = matter(blogFiles[path]);
+    return {
+      id: slug,
+      ...data,
+      date: data.date instanceof Date ? data.date.toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+      }).toUpperCase() : data.date.toUpperCase()
+    };
+  }).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
 
   const servicesData = [
     {

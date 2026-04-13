@@ -1,34 +1,33 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import './Blogs.css';
+import matter from 'gray-matter';
+import { Buffer } from 'buffer';
+
+// Fix for gray-matter in some vite environments
+if (typeof window !== 'undefined') {
+  window.Buffer = Buffer;
+}
 
 const Blogs = () => {
-  const blogs = [
-    {
-      id: 1,
-      title: "The Future of Digital Marketing in Qatar: What to Expect in 2026",
-      category: "Marketing",
-      date: "October 12, 2025",
-      image: "/blogs/marketing.png",
-      excerpt: "Explore the emerging trends in digital marketing and how Qatari businesses can leverage new technologies to stay ahead of the curve."
-    },
-    {
-      id: 2,
-      title: "Why High-End Visual Content is Non-Negotiable for Luxury Brands",
-      category: "Production",
-      date: "September 28, 2025",
-      image: "/blogs/production.png",
-      excerpt: "In a world of infinite scroll, aesthetic is everything. Learn how premium photography and video production drive real ROI."
-    },
-    {
-      id: 3,
-      title: "SEO vs Social Media: Where Should You Invest Your Budget?",
-      category: "Strategy",
-      date: "September 15, 2025",
-      image: "/blogs/strategy.png",
-      excerpt: "A comprehensive breakdown of where to allocate your marketing budget for maximum impact, comparing organic growth and paid visibility."
-    }
-  ];
+  // Load ALL markdown files from the content folder
+  const blogFiles = import.meta.glob('../content/blogs/*.md', { as: 'raw', eager: true });
+  
+  const blogs = Object.keys(blogFiles).map((path, index) => {
+    const slug = path.split('/').pop().replace('.md', '');
+    const { data } = matter(blogFiles[path]);
+    
+    return {
+      id: slug,
+      ...data,
+      // Ensure date is a string if it's a Date object
+      date: data.date instanceof Date ? data.date.toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+      }) : data.date
+    };
+  }).sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by newest
 
   return (
     <div className="blogs-page">
