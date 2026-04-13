@@ -15,30 +15,47 @@
   pointer-events: none;
 }
 
-.hero-video-bg img {
+.hero-video-bg img,
+.hero-video-bg video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   filter: brightness(0.3) contrast(1.2);
   transform: scale(1.05); /* allow parallax breathing room */
 }
 
 .hero-content {
   position: absolute;
-  bottom: 10vh;
+  bottom: 8vh;
   left: 5vw;
   z-index: 2;
   width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    bottom: 6vh;
+    gap: 1.5rem;
+  }
+  .hero-sub {
+    text-align: left;
+    max-width: 100%;
+  }
 }
 
 .hero-title h1 {
-  font-size: clamp(3rem, 9vw, 12rem);
+  font-size: clamp(3.5rem, 20vw, 12rem);
   color: var(--text-primary);
   font-weight: 400;
   letter-spacing: -0.02em;
+  line-height: 0.9;
 }
 
 .hero-sub {
@@ -621,4 +638,73 @@
 
 .news-card:hover .news-title {
   color: var(--accent-primary);
+}
+
+/* =============================================
+   MOBILE RESPONSIVE — All fixes
+   ============================================= */
+@media (max-width: 768px) {
+  /* Statement section */
+  .statement-section {
+    padding: 12vh 5vw;
+  }
+
+  /* Services — inline image when tapped */
+  .service-item {
+    grid-template-columns: 40px 1fr;
+    padding: 2rem 0;
+    cursor: pointer;
+  }
+
+  .service-mobile-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 1.2rem 0 0.5rem;
+    display: block;
+  }
+
+  .service-item.mobile-open .service-content {
+    grid-template-rows: 1fr;
+  }
+
+  .service-item.mobile-open .service-name {
+    color: var(--accent-primary);
+  }
+
+  /* News header stack */
+  .news-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  /* FAQ spacing */
+  .faq-section {
+    padding: 10vh 5vw;
+  }
+
+  /* Clients header */
+  .clients-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* Visual block */
+  .visual-block {
+    width: 95vw;
+    margin: 5vh auto;
+  }
+
+  /* Services CTA button — left-align on mobile */
+  .services-section > div:last-child {
+    text-align: left !important;
+  }
+
+  /* Who we are spacing */
+  .who-we-are-wrapper {
+    padding: 10vh 5vw;
+  }
 }

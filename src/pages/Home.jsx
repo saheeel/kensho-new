@@ -15,6 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const [activeFaq, setActiveFaq] = useState(null);
+  const [mobileOpenService, setMobileOpenService] = useState(null);
   const videoBgRef = useRef(null);
   const heroTextRefs = useRef([]);
   const statementWordsRef = useRef([]);
@@ -274,14 +275,24 @@ const Home = () => {
             {servicesData.map((service, index) => (
               <div 
                 key={index} 
-                className="service-item hover-target" 
+                className={`service-item hover-target ${mobileOpenService === index ? 'mobile-open' : ''}`}
                 data-cursor-text="VIEW"
                 onMouseEnter={() => handleServiceHover(service.img)} 
                 onMouseLeave={handleServiceLeave}
+                onClick={() => setMobileOpenService(mobileOpenService === index ? null : index)}
               >
                 <div className="service-number">{service.num} /</div>
                 <div>
                   <h3 className="service-name">{service.title}</h3>
+                  {/* Inline image — only shown on mobile when tapped */}
+                  {mobileOpenService === index && (
+                    <img
+                      src={service.img}
+                      alt={service.title}
+                      className="service-mobile-img"
+                      loading="lazy"
+                    />
+                  )}
                   <div className="service-content">
                     <div className="service-content-inner">
                       <p className="service-desc">{service.desc}</p>
