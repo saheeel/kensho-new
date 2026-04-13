@@ -27,8 +27,6 @@ export default defineConfig({
     assetsInlineLimit: 4096,
     // Enable CSS code splitting
     cssCodeSplit: true,
-    // Minify
-    minify: 'esbuild',
     // Target modern browsers for smaller output
     target: 'es2020',
     // Warn on large chunks
