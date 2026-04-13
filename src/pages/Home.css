@@ -306,17 +306,17 @@
 
 .service-item {
   display: grid;
-  grid-template-columns: 80px 1fr 300px; /* Grid for integrated image */
-  gap: 2rem;
-  padding: 4rem 0;
+  grid-template-columns: 80px 1fr 350px; /* Wider fixed image col */
+  gap: 3rem;
+  padding: 4rem 2rem; /* Consistent padding */
   border-bottom: 1px solid var(--border-color);
   align-items: center;
-  transition: all 0.4s ease;
+  transition: background 0.4s ease;
+  position: relative;
 }
 
 .service-item:hover {
-  background: rgba(255, 255, 255, 0.02);
-  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .service-name {
@@ -356,13 +356,7 @@
 }
 
 .service-content {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.service-item:hover .service-content {
-  grid-template-rows: 1fr;
+  display: block; /* No more accordion jumping */
 }
 
 .service-content-inner {
