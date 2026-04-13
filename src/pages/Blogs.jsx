@@ -13,21 +13,25 @@ const Blogs = () => {
   // Load ALL markdown files from the content folder
   const blogFiles = import.meta.glob('../content/blogs/*.md', { as: 'raw', eager: true });
   
-  const blogs = Object.keys(blogFiles).map((path, index) => {
-    const slug = path.split('/').pop().replace('.md', '');
-    const { data } = matter(blogFiles[path]);
-    
-    return {
-      id: slug,
-      ...data,
-      // Ensure date is a string if it's a Date object
-      date: data.date instanceof Date ? data.date.toLocaleDateString('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric'
-      }) : data.date
-    };
-  }).sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by newest
+  const blogs = Object.keys(blogFiles).map((path) => {
+    try {
+      const slug = path.split('/').pop().replace('.md', '');
+      const { data } = matter(blogFiles[path]);
+      
+      return {
+        id: slug,
+        ...data,
+        date: data.date instanceof Date ? data.date.toLocaleDateString('en-US', {
+          month: 'long',
+          day: 'numeric',
+          year: 'numeric'
+        }) : data.date || "No Date"
+      };
+    } catch (e) {
+      console.error("Error parsing blog:", path, e);
+      return null;
+    }
+  }).filter(blog => blog !== null).sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <div className="blogs-page">
