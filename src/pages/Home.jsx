@@ -252,13 +252,12 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="team-section">
-          <div className="team-header">
-            <h2>The People<br />Behind the Work.</h2>
-            <p>A team of strategists, creators & storytellers — based in Doha, Qatar.</p>
+        <section className="visual-block-wrapper">
+          <div className="container">
+            <h3 className="section-subtitle animate-fade-in">OUR SQUAD / THE ARCHITECTS</h3>
           </div>
           <div className="visual-block">
-            <img ref={visualRef} src="/kenshogroup.jpg" alt="The Kensho Media Team" className="visual-image" loading="lazy" />
+            <img ref={visualRef} src="/kenshogroup.jpg" alt="Our Team" className="visual-image" />
           </div>
         </section>
 
