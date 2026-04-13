@@ -193,10 +193,10 @@ const Home = () => {
               muted
               loop
               playsInline
-              preload="none"
+              preload="auto"
               aria-hidden="true"
             >
-              <source src="/mainvideo.gif" type="image/gif" />
+              <source src="/mainvideo.mp4" type="video/mp4" />
             </video>
           </div>
           
