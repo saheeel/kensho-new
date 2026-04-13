@@ -40,17 +40,19 @@
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
-    align-items: stretch; /* Stretch to allow inner alignments */
-    bottom: 6vh;
+    align-items: flex-start;
+    bottom: 5vh; /* Slightly lower for impact */
     gap: 2rem;
+    width: 90%;
   }
   .hero-title h1 {
-    font-size: clamp(2.8rem, 12vw, 4rem); /* Bigger on mobile */
+    font-size: clamp(3.5rem, 15vw, 6rem); /* Very big on mobile */
+    line-height: 1.0;
   }
   .hero-sub {
-    text-align: right; /* Kept on the right */
-    align-self: flex-end;
-    max-width: 250px;
+    align-self: flex-end; /* Move to right */
+    text-align: right;
+    max-width: 250px; /* Keep it tight */
     font-size: 0.75rem;
   }
 }
