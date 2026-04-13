@@ -50,8 +50,6 @@ const Blogs = () => {
     }
   }).filter(blog => blog !== null).sort((a, b) => b.rawDate - a.rawDate);
 
-  console.log("Current Blogs Loaded:", blogs);
-
   return (
     <div className="blogs-page">
       <div className="container">
