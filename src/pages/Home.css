@@ -46,8 +46,8 @@
     width: 90%;
   }
   .hero-title h1 {
-    font-size: clamp(3.5rem, 15vw, 6rem); /* Very big on mobile */
-    line-height: 1.0;
+    font-size: clamp(4.5rem, 25vw, 12rem); /* Aggressively big on mobile */
+    line-height: 0.9;
   }
   .hero-sub {
     align-self: flex-end; /* Move to right */
@@ -58,11 +58,11 @@
 }
 
 .hero-title h1 {
-  font-size: clamp(2.5rem, 10vw, 7rem);
+  font-size: clamp(3.5rem, 15vw, 12rem);
   color: var(--text-primary);
   font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  letter-spacing: -0.04em; /* Tighter for massive text */
+  line-height: 0.95;
 }
 
 .hero-sub {
