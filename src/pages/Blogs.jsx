@@ -21,6 +21,7 @@ const Blogs = () => {
       return {
         id: slug,
         ...data,
+        rawDate: data.date ? new Date(data.date) : new Date(0),
         date: data.date instanceof Date ? data.date.toLocaleDateString('en-US', {
           month: 'long',
           day: 'numeric',
@@ -31,7 +32,9 @@ const Blogs = () => {
       console.error("Error parsing blog:", path, e);
       return null;
     }
-  }).filter(blog => blog !== null).sort((a, b) => new Date(b.date) - new Date(a.date));
+  }).filter(blog => blog !== null).sort((a, b) => b.rawDate - a.rawDate);
+
+  console.log("Current Blogs Loaded:", blogs);
 
   return (
     <div className="blogs-page">
