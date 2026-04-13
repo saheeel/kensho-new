@@ -7,15 +7,19 @@ export default defineConfig({
     // Split chunks for better caching
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Core vendor bundle
-          'vendor-react': ['react', 'react-dom'],
-          'vendor-router': ['react-router-dom'],
-          // Animation libs — large, separate for caching
-          'vendor-gsap': ['gsap'],
-          'vendor-lenis': ['@studio-freight/lenis'],
-          // Markdown processing
-          'vendor-markdown': ['gray-matter', 'react-markdown', 'buffer'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'vendor-core';
+            }
+            if (id.includes('gsap') || id.includes('lenis')) {
+              return 'vendor-animation';
+            }
+            if (id.includes('gray-matter') || id.includes('react-markdown') || id.includes('buffer')) {
+              return 'vendor-markdown';
+            }
+            return 'vendor'; // all other node_modules
+          }
         },
       },
     },
