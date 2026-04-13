@@ -21,8 +21,6 @@ const Home = () => {
   const statementWordsRef = useRef([]);
   const visualRef = useRef(null);
   const servicesRef = useRef([]);
-  const whoRefs = useRef([]);
-  const whoProgressRef = useRef(null);
 
   useEffect(() => {
     // Elegant Hero Entrance
@@ -87,35 +85,6 @@ const Home = () => {
         }
       }
     );
-
-    // Core Identity Progress Bar
-    gsap.to(whoProgressRef.current, {
-      height: '100%',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.who-we-are-wrapper',
-        start: 'top center',
-        end: 'bottom center',
-        scrub: true,
-      }
-    });
-
-    // Core Identity Blocks reveal
-    whoRefs.current.forEach((block, i) => {
-      gsap.fromTo(block, 
-        { opacity: 0, x: 50 },
-        { 
-          opacity: 1, 
-          x: 0, 
-          duration: 1.2, 
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: block,
-            start: 'top 85%',
-          }
-        }
-      );
-    });
 
     return () => {
       ScrollTrigger.getAll().forEach(t => t.kill());
@@ -275,31 +244,16 @@ const Home = () => {
         <section className="who-we-are-wrapper">
           <div className="who-we-are-grid">
             <div className="who-sticky-col">
-              <div className="who-sticky-inner">
-                <div className="who-progress-container">
-                  <div className="who-progress-bar" ref={whoProgressRef}></div>
-                </div>
-                <h2>THE CORE<br/><span className="italic-accent">identity.</span></h2>
-              </div>
+              <h2>THE CORE<br/><span className="italic-accent">identity.</span></h2>
             </div>
-            
             <div className="who-scroll-col">
-              <div className="who-block" ref={el => whoRefs.current[0] = el}>
-                <span className="block-num">01 /</span>
-                <h3>WHO WE ARE</h3>
-                <p>Kensho Media is a dynamic digital marketing agency based in Qatar, committed to empowering businesses to thrive in the digital age. Since 2024, we remain obsessed with crafting innovative and results-driven digital solutions tailored to your absolute finest standards.</p>
+              <div className="who-block">
+                <h3>01 / WHO WE ARE</h3>
+                <p>Kensho Media is a dynamic digital marketing agency based in Qatar, committed to empowering businesses to thrive in the digital age. Since 2024, we remain obsessed with crafting innovative and results-driven digital solutions tailored to your absolute finest standards. In a world where attention is currency, we foster genuine community growth rather than temporary likes.</p>
               </div>
-              
-              <div className="who-block" ref={el => whoRefs.current[1] = el}>
-                <span className="block-num">02 /</span>
-                <h3>BEHIND THE BRAND</h3>
-                <p>Great marketing is built on profound understanding, not mere algorithms. Our approach is deeply personal; we seamlessly align with your vision to construct strategies that resonate structurally and emotionally with your consumers.</p>
-              </div>
-
-              <div className="who-block" ref={el => whoRefs.current[2] = el}>
-                <span className="block-num">03 /</span>
-                <h3>OUR PHILOSOPHY</h3>
-                <p>We believe in the bridge between creative chaos and strategic precision. In a world where attention is currency, we foster genuine community growth rather than temporary likes.</p>
+              <div className="who-block">
+                <h3>02 / BEHIND THE BRAND</h3>
+                <p>Great marketing is built on profound understanding, not mere algorithms. Our approach is deeply personal; we seamlessly align with your vision to construct strategies that resonate structurally and emotionally with your consumers. The bridge between creative chaos and strategic precision.</p>
               </div>
             </div>
           </div>

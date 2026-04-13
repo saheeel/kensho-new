@@ -40,29 +40,26 @@
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
-    align-items: flex-start;
-    bottom: 5vh; /* Slightly lower for impact */
+    align-items: flex-end; /* Keep everything right-aligned on mobile */
+    bottom: 6vh;
     gap: 2rem;
-    width: 90%;
   }
   .hero-title h1 {
-    font-size: clamp(4.5rem, 25vw, 12rem); /* Aggressively big on mobile */
-    line-height: 0.9;
+    font-size: clamp(3.5rem, 18vw, 10rem); /* Make H1 very big for mobile */
+    text-align: right;
   }
   .hero-sub {
-    align-self: flex-end; /* Move to right */
     text-align: right;
-    max-width: 250px; /* Keep it tight */
-    font-size: 0.75rem;
+    max-width: 100%;
   }
 }
 
 .hero-title h1 {
-  font-size: clamp(3.5rem, 15vw, 12rem);
+  font-size: clamp(2.5rem, 10vw, 7rem);
   color: var(--text-primary);
   font-weight: 400;
-  letter-spacing: -0.04em; /* Tighter for massive text */
-  line-height: 0.95;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .hero-sub {
@@ -133,28 +130,19 @@
   }
 }
 
-.who-sticky-inner {
-  display: flex;
-  gap: 3rem;
-  align-items: flex-start;
+.who-sticky-col {
+  width: 45%;
+  position: sticky;
+  top: 25vh;
 }
 
-.who-progress-container {
-  width: 2px;
-  height: 200px;
-  background: rgba(255, 255, 255, 0.1);
-  position: relative;
-  margin-top: 1rem;
-}
-
-.who-progress-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  background: var(--accent-primary);
-  box-shadow: 0 0 15px var(--accent-primary);
+@media(max-width: 900px) {
+  .who-sticky-col {
+    position: relative;
+    width: 100%;
+    top: 0;
+    margin-bottom: 10vh;
+  }
 }
 
 .who-sticky-col h2 {
@@ -163,7 +151,7 @@
   font-weight: 400;
   color: var(--text-primary);
   line-height: 0.9;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .who-sticky-col span.italic-accent {
@@ -171,16 +159,6 @@
   font-style: italic;
   text-transform: lowercase;
   color: var(--accent-primary);
-}
-
-@media(max-width: 900px) {
-  .who-sticky-inner {
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-  }
-  .who-progress-container {
-    height: 100px;
-  }
 }
 
 .who-scroll-col {
@@ -196,41 +174,31 @@
 }
 
 .who-block {
-  margin-bottom: 30vh;
-  position: relative;
-  padding-left: 2rem;
+  margin-bottom: 20vh;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4rem;
 }
 
 .who-block:last-child {
+  border-bottom: none;
   margin-bottom: 0;
 }
 
-.block-num {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  color: var(--accent-primary);
-  letter-spacing: 0.3em;
-  display: block;
-  margin-bottom: 2rem;
-  font-weight: 600;
-}
-
 .who-block h3 {
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 3vw, 3rem);
-  font-weight: 300;
-  margin-bottom: 3rem;
-  color: var(--text-primary);
-  letter-spacing: -0.02em;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: var(--accent-primary);
 }
 
 .who-block p {
   font-family: var(--font-body);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  color: var(--text-secondary);
-  line-height: 1.8;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: var(--text-primary);
+  line-height: 1.6;
   font-weight: 300;
-  max-width: 600px;
 }
 
 /* Clients / Trust / Testimonials Section */
