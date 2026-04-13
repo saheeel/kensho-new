@@ -2,29 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link, useLocation } from 'react-router-dom';
+import matter from 'gray-matter';
+import { Buffer } from 'buffer';
 import './Home.css';
 
-// Custom lightweight parser to avoid polyfill crashes
-const parseFrontmatter = (fileContent) => {
-  const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
-  const match = fileContent.match(frontmatterRegex);
-  if (!match) return { data: {}, content: fileContent };
-
-  const frontmatterBlock = match[1];
-  const content = match[2];
-  const data = {};
-
-  frontmatterBlock.split('\n').forEach(line => {
-    const [key, ...valueParts] = line.split(':');
-    if (key && valueParts.length > 0) {
-      let value = valueParts.join(':').trim();
-      value = value.replace(/^["'](.*)["']$/, '$1');
-      data[key.trim()] = value;
-    }
-  });
-
-  return { data, content };
-};
+// Fix for gray-matter in some vite environments
+if (typeof window !== 'undefined') {
+  window.Buffer = Buffer;
+}
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -140,26 +125,21 @@ const Home = () => {
     }
   ];
 
-  // Load the latest 3 blogs for the news section
-  const blogFiles = import.meta.glob('../content/blogs/*.md', { query: '?raw', eager: true });
+  // Load the latest 3 blogs using absolute root path
+  const blogFiles = import.meta.glob('/src/content/blogs/*.md', { as: 'raw', eager: true });
   const newsData = Object.keys(blogFiles).map((path) => {
     const slug = path.split('/').pop().replace('.md', '');
-    const { data } = parseFrontmatter(blogFiles[path]);
-    
-    const rawDateObj = data.date ? new Date(data.date) : new Date(0);
-    const rawDate = isNaN(rawDateObj.getTime()) ? 0 : rawDateObj.getTime();
-
+    const { data } = matter(blogFiles[path]);
     return {
       id: slug,
       ...data,
-      rawDate,
-      date: data.date && !isNaN(new Date(data.date).getTime()) ? new Date(data.date).toLocaleDateString('en-US', {
+      date: data.date instanceof Date ? data.date.toLocaleDateString('en-US', {
         month: 'long',
         day: 'numeric',
         year: 'numeric'
-      }).toUpperCase() : "NO DATE"
+      }).toUpperCase() : data.date.toUpperCase()
     };
-  }).sort((a, b) => b.rawDate - a.rawDate).slice(0, 3);
+  }).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
 
   const servicesData = [
     {

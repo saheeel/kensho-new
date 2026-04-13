@@ -1,35 +1,20 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, User } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
 import './BlogDetail.css';
+import matter from 'gray-matter';
+import ReactMarkdown from 'react-markdown';
+import { Buffer } from 'buffer';
 
-// Custom lightweight parser for browser stability
-const parseFrontmatter = (fileContent) => {
-  const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
-  const match = fileContent.match(frontmatterRegex);
-  if (!match) return { data: {}, content: fileContent };
-
-  const frontmatterBlock = match[1];
-  const content = match[2];
-  const data = {};
-
-  frontmatterBlock.split('\n').forEach(line => {
-    const [key, ...valueParts] = line.split(':');
-    if (key && valueParts.length > 0) {
-      let value = valueParts.join(':').trim();
-      value = value.replace(/^["'](.*)["']$/, '$1');
-      data[key.trim()] = value;
-    }
-  });
-
-  return { data, content };
-};
+// Fix for gray-matter
+if (typeof window !== 'undefined') {
+  window.Buffer = Buffer;
+}
 
 const BlogDetail = () => {
   const { id: slug } = useParams();
 
-  // Load all markdown files
-  const blogFiles = import.meta.glob('../content/blogs/*.md', { query: '?raw', eager: true });
+  // Load all markdown files using absolute root path
+  const blogFiles = import.meta.glob('/src/content/blogs/*.md', { as: 'raw', eager: true });
   
   // Find the file that matches the slug
   const filePath = Object.keys(blogFiles).find(path => path.endsWith(`${slug}.md`));
@@ -38,17 +23,17 @@ const BlogDetail = () => {
     return <div className="container" style={{ padding: '150px 0', textAlign: 'center' }}><h1>Blog not found</h1><Link to="/blogs" className="btn-sleek">BACK TO BLOGS</Link></div>;
   }
 
-  const { data, content } = parseFrontmatter(blogFiles[filePath]);
+  const { data, content } = matter(blogFiles[filePath]);
 
   const blog = {
     ...data,
     content,
     // Ensure date is a string
-    date: data.date && !isNaN(new Date(data.date).getTime()) ? new Date(data.date).toLocaleDateString('en-US', {
+    date: data.date instanceof Date ? data.date.toLocaleDateString('en-US', {
       month: 'long',
       day: 'numeric',
       year: 'numeric'
-    }) : "No Date",
+    }) : data.date,
     author: data.author || "Kensho Team",
     readTime: data.readTime || "5 min read"
   };

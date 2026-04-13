@@ -1,57 +1,39 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import './Blogs.css';
+import matter from 'gray-matter';
+import { Buffer } from 'buffer';
 
-// Custom lightweight parser to avoid "Buffer" errors in browser
-const parseFrontmatter = (fileContent) => {
-  const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
-  const match = fileContent.match(frontmatterRegex);
-  if (!match) return { data: {}, content: fileContent };
-
-  const frontmatterBlock = match[1];
-  const content = match[2];
-  const data = {};
-
-  frontmatterBlock.split('\n').forEach(line => {
-    const [key, ...valueParts] = line.split(':');
-    if (key && valueParts.length > 0) {
-      let value = valueParts.join(':').trim();
-      // Remove surrounding quotes
-      value = value.replace(/^["'](.*)["']$/, '$1');
-      data[key.trim()] = value;
-    }
-  });
-
-  return { data, content };
-};
+// Fix for gray-matter in some vite environments
+if (typeof window !== 'undefined') {
+  window.Buffer = Buffer;
+}
 
 const Blogs = () => {
-  // Load ALL markdown files from the content folder
-  const blogFiles = import.meta.glob('../content/blogs/*.md', { query: '?raw', eager: true });
+  // Load ALL markdown files using absolute root path for Vercel consistency
+  const blogFiles = import.meta.glob('/src/content/blogs/*.md', { as: 'raw', eager: true });
+  
+  console.log("Blogs found:", Object.keys(blogFiles).length);
   
   const blogs = Object.keys(blogFiles).map((path) => {
     try {
       const slug = path.split('/').pop().replace('.md', '');
-      const { data } = parseFrontmatter(blogFiles[path]);
-      
-      const rawDateObj = data.date ? new Date(data.date) : new Date(0);
-      const rawDate = isNaN(rawDateObj.getTime()) ? 0 : rawDateObj.getTime();
+      const { data } = matter(blogFiles[path]);
       
       return {
         id: slug,
         ...data,
-        rawDate,
-        date: data.date && !isNaN(new Date(data.date).getTime()) ? new Date(data.date).toLocaleDateString('en-US', {
+        date: data.date instanceof Date ? data.date.toLocaleDateString('en-US', {
           month: 'long',
           day: 'numeric',
           year: 'numeric'
-        }) : "No Date"
+        }) : data.date || "No Date"
       };
     } catch (e) {
       console.error("Error parsing blog:", path, e);
       return null;
     }
-  }).filter(blog => blog !== null).sort((a, b) => b.rawDate - a.rawDate);
+  }).filter(blog => blog !== null).sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <div className="blogs-page">
