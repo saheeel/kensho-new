@@ -145,11 +145,15 @@ const Home = () => {
   const newsData = Object.keys(blogFiles).map((path) => {
     const slug = path.split('/').pop().replace('.md', '');
     const { data } = parseFrontmatter(blogFiles[path]);
+    
+    const rawDateObj = data.date ? new Date(data.date) : new Date(0);
+    const rawDate = isNaN(rawDateObj.getTime()) ? 0 : rawDateObj.getTime();
+
     return {
       id: slug,
       ...data,
-      rawDate: data.date ? new Date(data.date) : new Date(0),
-      date: data.date ? new Date(data.date).toLocaleDateString('en-US', {
+      rawDate,
+      date: data.date && !isNaN(new Date(data.date).getTime()) ? new Date(data.date).toLocaleDateString('en-US', {
         month: 'long',
         day: 'numeric',
         year: 'numeric'

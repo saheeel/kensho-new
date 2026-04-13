@@ -44,7 +44,7 @@ const BlogDetail = () => {
     ...data,
     content,
     // Ensure date is a string
-    date: data.date ? new Date(data.date).toLocaleDateString('en-US', {
+    date: data.date && !isNaN(new Date(data.date).getTime()) ? new Date(data.date).toLocaleDateString('en-US', {
       month: 'long',
       day: 'numeric',
       year: 'numeric'
