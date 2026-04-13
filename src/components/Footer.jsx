@@ -10,16 +10,27 @@ const Footer = () => {
   const footerRef = useRef(null);
 
   useEffect(() => {
-    gsap.to('.giant-text-fill', {
-      clipPath: 'polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)',
+    // Force a refresh to catch accurate page height
+    ScrollTrigger.refresh();
+
+    const anim = gsap.to('.giant-text-fill', {
+      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
       ease: 'none',
       scrollTrigger: {
         trigger: footerRef.current,
-        start: 'top 80%',
+        start: 'top 95%', // Starts earlier to ensure it works on short pages
         end: 'bottom bottom',
-        scrub: 1
+        scrub: 1,
+        invalidateOnRefresh: true
       }
     });
+
+    return () => {
+      anim.kill();
+      ScrollTrigger.getAll().forEach(st => {
+        if (st.trigger === footerRef.current) st.kill();
+      });
+    };
   }, []);
 
   const scrollToTop = () => {
