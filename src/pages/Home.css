@@ -441,10 +441,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 10%; /* Focus on top where heads/upper bodies are, gives room for legs below */
+  object-position: 50% 95%; /* Focus on bottom to show legs */
   filter: grayscale(100%);
   transition: filter 0.8s ease, transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-  transform: scale(1.1); /* Zoom in slightly */
+  transform: scale(1.05); /* Slight zoom for impact without cutting off extremes */
 }
 
 .visual-block:hover .visual-image {
