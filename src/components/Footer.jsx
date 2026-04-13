@@ -13,23 +13,24 @@ const Footer = () => {
     // Force a refresh to catch accurate page height
     ScrollTrigger.refresh();
 
-    const anim = gsap.to('.giant-text-fill', {
-      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: footerRef.current,
-        start: 'top 95%', // Starts earlier to ensure it works on short pages
-        end: 'bottom bottom',
-        scrub: 1,
-        invalidateOnRefresh: true
+    const anim = gsap.fromTo('.giant-text-fill', 
+      { clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)' },
+      {
+        clipPath: 'polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.footer-giant-title',
+          start: 'top 100%', 
+          end: 'bottom bottom',
+          scrub: 1.5,
+          invalidateOnRefresh: true,
+          // Removed toggleActions as scrub is active
+        }
       }
-    });
+    );
 
     return () => {
       anim.kill();
-      ScrollTrigger.getAll().forEach(st => {
-        if (st.trigger === footerRef.current) st.kill();
-      });
     };
   }, []);
 
