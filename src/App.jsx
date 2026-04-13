@@ -8,11 +8,14 @@ import About from './pages/About';
 import Blogs from './pages/Blogs';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
+import Admin from './pages/Admin';
 
 function App() {
   const location = useLocation();
+  const isAdmin = location.pathname.startsWith('/admin');
 
   useEffect(() => {
+    if (isAdmin) return; // Don't use smooth scroll on Admin page
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -42,17 +45,18 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <main data-scroll-container>
+      {!isAdmin && <Navbar />}
+      <main data-scroll-container={!isAdmin ? 'true' : 'false'}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:id" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </main>
-      <Footer />
+      {!isAdmin && <Footer />}
     </>
   );
 }

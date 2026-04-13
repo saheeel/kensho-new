@@ -1,3 +1,4 @@
+local_backend: true
 backend:
   name: github
   repo: saheeel/kensho-new # REPLACE THIS with your github repo path (e.g. saheeel/kensho-new)
