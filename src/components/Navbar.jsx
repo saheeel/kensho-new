@@ -56,7 +56,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isHidden ? 'hidden' : ''} ${isMobileMenuOpen ? 'menu-open' : ''}`}>
       <div className="container">
         <Link to="/" className="nav-brand hover-target" data-cursor-text="HOME">
-          <img src="/logo.png" alt="Kensho Media Logo" />
+          <img src="/logo.svg" alt="Kensho Media Logo" />
         </Link>
         
         <ul className="nav-links">
