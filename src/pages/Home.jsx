@@ -126,7 +126,7 @@ const Home = () => {
   ];
 
   // Load the latest 3 blogs for the news section
-  const blogFiles = import.meta.glob('../content/blogs/*.md', { as: 'raw', eager: true });
+  const blogFiles = import.meta.glob('../content/blogs/*.md', { query: '?raw', eager: true });
   const newsData = Object.keys(blogFiles).map((path) => {
     const slug = path.split('/').pop().replace('.md', '');
     const { data } = matter(blogFiles[path]);

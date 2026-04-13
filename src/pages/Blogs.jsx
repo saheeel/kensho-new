@@ -11,7 +11,7 @@ if (typeof window !== 'undefined') {
 
 const Blogs = () => {
   // Load ALL markdown files from the content folder
-  const blogFiles = import.meta.glob('../content/blogs/*.md', { as: 'raw', eager: true });
+  const blogFiles = import.meta.glob('../content/blogs/*.md', { query: '?raw', eager: true });
   
   const blogs = Object.keys(blogFiles).map((path) => {
     try {
