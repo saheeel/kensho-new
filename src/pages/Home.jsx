@@ -211,11 +211,11 @@ const Home = () => {
           <div className="hero-content">
             <div className="hero-title">
               <h1 className="clip-text">
-                <span className="clip-text-inner" ref={el => heroTextRefs.current[0] = el}>KENSHO</span>
+                <span className="clip-text-inner" ref={el => heroTextRefs.current[0] = el}>We create. We scale.</span>
               </h1>
               <br />
               <h1 className="clip-text">
-                <span className="clip-text-inner" ref={el => heroTextRefs.current[1] = el} style={{ color: 'var(--accent-primary)' }}>MEDIA.</span>
+                <span className="clip-text-inner" ref={el => heroTextRefs.current[1] = el} style={{ color: 'var(--accent-primary)' }}>Brands that stand out.</span>
               </h1>
             </div>
             

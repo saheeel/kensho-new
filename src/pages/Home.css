@@ -51,11 +51,11 @@
 }
 
 .hero-title h1 {
-  font-size: clamp(3.5rem, 20vw, 12rem);
+  font-size: clamp(2.5rem, 10vw, 7rem);
   color: var(--text-primary);
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 0.9;
+  line-height: 1.1;
 }
 
 .hero-sub {
