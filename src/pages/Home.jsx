@@ -187,7 +187,17 @@ const Home = () => {
       <main>
         <section className="hero-modern">
           <div className="hero-video-bg">
-            <img ref={videoBgRef} src="/mainvideo.gif" alt="Kensho Reel" />
+            <video
+              ref={videoBgRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              aria-hidden="true"
+            >
+              <source src="/mainvideo.gif" type="image/gif" />
+            </video>
           </div>
           
           <div className="hero-content">
