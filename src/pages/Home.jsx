@@ -291,22 +291,11 @@ const Home = () => {
                 key={index} 
                 className={`service-item hover-target ${mobileOpenService === index ? 'mobile-open' : ''}`}
                 data-cursor-text="VIEW"
-                onMouseEnter={() => handleServiceHover(service.img)} 
-                onMouseLeave={handleServiceLeave}
                 onClick={() => setMobileOpenService(mobileOpenService === index ? null : index)}
               >
                 <div className="service-number">{service.num} /</div>
                 <div>
                   <h3 className="service-name">{service.title}</h3>
-                  {/* Inline image — only shown on mobile when tapped */}
-                  {mobileOpenService === index && (
-                    <img
-                      src={service.img}
-                      alt={service.title}
-                      className="service-mobile-img"
-                      loading="lazy"
-                    />
-                  )}
                   <div className="service-content">
                     <div className="service-content-inner">
                       <p className="service-desc">{service.desc}</p>
@@ -318,6 +307,13 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
+                {/* Integrated Static Image */}
+                <img 
+                  src={service.img} 
+                  alt={service.title} 
+                  className="service-inline-img" 
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
