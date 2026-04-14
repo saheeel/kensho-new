@@ -1,8 +1,12 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Lazy-load all pages — only downloaded when user visits them
 const Home = lazy(() => import('./pages/Home'));
@@ -29,6 +33,8 @@ function App() {
       touchMultiplier: 2,
       infinite: false,
     });
+
+    lenis.on('scroll', ScrollTrigger.update);
 
     function raf(time) {
       lenis.raf(time);

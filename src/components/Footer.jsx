@@ -10,8 +10,10 @@ const Footer = () => {
   const footerRef = useRef(null);
 
   useEffect(() => {
-    // Force a refresh to catch accurate page height
-    ScrollTrigger.refresh();
+    // Force a slightly delayed refresh to catch accurate page height after content settles
+    const refreshTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 200);
 
     const anim = gsap.fromTo('.giant-text-fill', 
       { clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)' },
@@ -24,12 +26,12 @@ const Footer = () => {
           end: 'bottom bottom',
           scrub: 1.5,
           invalidateOnRefresh: true,
-          // Removed toggleActions as scrub is active
         }
       }
     );
 
     return () => {
+      clearTimeout(refreshTimer);
       anim.kill();
     };
   }, []);
