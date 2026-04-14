@@ -44,9 +44,8 @@ const Footer = () => {
         <div className="footer-col">
           <h4>LOCATE US</h4>
           <p>
-            Ten Works Business Center<br />
-            Doha Souq Mall, Al Nasr<br />
-            Doha, Qatar
+            Block No.6<br />
+            Barwa Commercial Avenue, Doha
           </p>
         </div>
         <div className="footer-col">

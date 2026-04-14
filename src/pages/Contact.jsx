@@ -21,7 +21,7 @@ const Contact = () => {
     const data = new FormData(form);
 
     try {
-      const response = await fetch("https://formspree.io/f/mqkowpvr", { // REPLACABLE: mqkowpvr
+      const response = await fetch("https://formspree.io/f/myklzwpk", { // REPLACABLE: mqkowpvr
         method: "POST",
         body: data,
         headers: {
@@ -54,8 +54,8 @@ const Contact = () => {
           <div className="contact-info-block">
             <div className="contact-label">HEADQUARTERS</div>
             <div className="contact-detail">
-              Ten Works Business Center<br />
-              Doha Souq Mall, Al Nasr
+              Block No.6<br />
+              Barwa Commercial Avenue, Doha
             </div>
           </div>
           <div className="contact-info-block" style={{marginTop: '2rem'}}>
