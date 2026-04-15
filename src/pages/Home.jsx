@@ -152,28 +152,28 @@ const Home = () => {
     {
       num: '01',
       title: 'BRANDING & MEDIA PRODUCTION',
-      img: '/services/brandingandmedia.jpg',
+      img: '/services/brandingandmedia.webp',
       desc: 'We craft compelling brand identities and high-quality visual content that tells your story. From logo design to professional video production, we ensure your brand stands out visually and connects emotionally with your audience across all platforms.',
       bullets: ['BRAND IDENTITY DESIGN', 'PROFESSIONAL VIDEOGRAPHY', 'COMMERCIAL PHOTOGRAPHY', 'CREATIVE ART DIRECTION', 'VISUAL STORYTELLING']
     },
     {
       num: '02',
       title: 'WEB DEVELOPMENT & SEO',
-      img: '/services/webdevelopmentandseo.jpg',
+      img: '/services/webdevelopmentandseo.webp',
       desc: 'Your website is your digital storefront. We build responsive, high-performance websites optimized for both user experience and search engines. Our development process ensures your site looks great, loads fast, and ranks high on Google to capture organic traffic.',
       bullets: ['CUSTOM WEBSITE DESIGN', 'SEO OPTIMIZATION', 'RESPONSIVE MOBILE LAYOUTS', 'UI/UX EXPERIENCE DESIGN', 'SPEED & PERFORMANCE TUNING']
     },
     {
       num: '03',
       title: 'DIGITAL MARKETING & ADS',
-      img: '/services/digitalmarketingandads.jpg',
+      img: '/services/digitalmarketingandads.webp',
       desc: 'Drive targeted traffic and generate real leads with our comprehensive digital marketing solutions. We design high-converting paid advertising campaigns and broader marketing strategies that maximize your reach and deliver a measurable Return on Investment (ROI).',
       bullets: ['PAID AD CAMPAIGNS (PPC)', 'LEAD GENERATION STRATEGIES', 'MARKET & COMPETITOR ANALYSIS', 'CROSS-CHANNEL MARKETING', 'ROI OPTIMIZATION']
     },
     {
       num: '04',
       title: 'SOCIAL MEDIA MARKETING',
-      img: '/services/socialmediamarketing.jpg',
+      img: '/services/socialmediamarketing.webp',
       desc: 'Accelerate your brand’s presence with expert social media management. We handle everything from content creation to community engagement, using data-driven strategies to turn followers into loyal customers and build a thriving online community.',
       bullets: ['CONTENT STRATEGY & PLANNING', 'COMMUNITY MANAGEMENT', 'REELS & SHORT-FORM VIDEO', 'ANALYTICS & REPORTING', 'TREND ADAPTATION']
     }
@@ -266,7 +266,7 @@ const Home = () => {
           <div className="visual-block">
             <img 
               ref={visualRef} 
-              src="/kenshogroup.jpg" 
+              src="/kenshogroup.webp" 
               alt="Our Team" 
               className="visual-image" 
               loading="lazy"

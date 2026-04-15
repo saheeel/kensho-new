@@ -32,7 +32,7 @@ const About = () => {
         <div className="founder-grid">
           <div className="founder-card">
             <div className="founder-img-wrapper">
-              <img src="/sulthan2.jpg" alt="Sulthan Abdulla" />
+              <img src="/sulthan2.webp" alt="Sulthan Abdulla" />
             </div>
             <div className="founder-info">
               <h3>SULTHAN ABDULLA</h3>
@@ -43,7 +43,7 @@ const About = () => {
 
           <div className="founder-card" style={{ marginTop: '10vh' }}>
             <div className="founder-img-wrapper">
-              <img src="/khalisa.jpg" alt="Afeefath Khalisa" />
+              <img src="/khalisa.webp" alt="Afeefath Khalisa" />
             </div>
             <div className="founder-info">
               <h3>AFEEFATH KHALISA</h3>
