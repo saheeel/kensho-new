@@ -11,7 +11,7 @@ Digital marketing looks simple from the outside. Post some content, run a few ad
 
 ---
 
-## 1. Treating Social Media as Just Posting Content
+### 1. Treating Social Media as Just Posting Content
 
 Most businesses think being active means posting regularly. So they post random designs, festival creatives, or occasional product photos and expect growth.
 
@@ -27,7 +27,7 @@ Without a clear strategy, even daily posting won’t lead to real results.
 
 ---
 
-## 2. Expecting Instant Results
+### 2. Expecting Instant Results
 
 A lot of businesses give up too early. They try digital marketing for a month or two and say, “It’s not working.”
 
@@ -41,7 +41,7 @@ Instead of chasing quick wins, focus on long-term growth. That’s where real re
 
 ---
 
-## 3. Ignoring Content Quality
+### 3. Ignoring Content Quality
 
 There’s a big difference between posting and creating content.
 
@@ -57,7 +57,7 @@ Good content doesn’t just get attention. It builds credibility.
 
 ---
 
-## 4. Not Understanding Your Audience
+### 4. Not Understanding Your Audience
 
 Many businesses create content based on what they like, not what their audience needs. That’s why posts don’t get engagement and campaigns don’t convert.
 
@@ -71,7 +71,7 @@ Good marketing always starts with understanding people.
 
 ---
 
-## 5. Trying to Do Everything Without a Strategy
+### 5. Trying to Do Everything Without a Strategy
 
 This is the biggest mistake.
 
