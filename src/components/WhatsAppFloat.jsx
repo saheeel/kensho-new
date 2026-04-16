@@ -1,16 +1,31 @@
+import { useState, useEffect } from 'react';
 import './WhatsAppFloat.css';
 
 const WhatsAppFloat = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const phoneNumber = "97450590808";
   const message = "Hi Kensho Media, I'd like to discuss a project.";
   const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <a 
       href={waLink} 
       target="_blank" 
       rel="noopener noreferrer" 
-      className="whatsapp-float hover-target"
+      className={`whatsapp-float hover-target ${isVisible ? 'visible' : ''}`}
       data-cursor-text="CHAT"
     >
       <div className="whatsapp-btn">
