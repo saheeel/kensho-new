@@ -9,14 +9,12 @@ excerpt: Businesses often struggle with digital marketing not because they
 ---
 Digital marketing looks simple from the outside. Post some content, run a few ads, maybe hire a freelancer and results should come, right? But for most businesses, it doesn’t work that way. The truth is, it’s not about doing something. It’s about doing the right things consistently.
 
----
 
 ### 1. Treating Social Media as Just Posting Content
 
 Most businesses think being active means posting regularly. So they post random designs, festival creatives, or occasional product photos and expect growth.
 
 The problem isn’t consistency. It’s direction.
-
 Every piece of content should have a purpose:
 
 - Awareness  
@@ -25,7 +23,6 @@ Every piece of content should have a purpose:
 
 Without a clear strategy, even daily posting won’t lead to real results.
 
----
 
 ### 2. Expecting Instant Results
 
@@ -38,8 +35,6 @@ But digital growth doesn’t work like that:
 - Trust builds slowly  
 
 Instead of chasing quick wins, focus on long-term growth. That’s where real results come from.
-
----
 
 ### 3. Ignoring Content Quality
 
@@ -76,7 +71,6 @@ Good marketing always starts with understanding people.
 This is the biggest mistake.
 
 Businesses try:
-
 - SEO  
 - Social media  
 - Paid ads  
@@ -87,14 +81,12 @@ All at once, without a clear plan.
 The result is effort everywhere and results nowhere.
 
 Instead, focus on:
-
 - Clear goals  
 - Defined channels  
 - Consistent execution  
 
 When everything works together, results start to show.
 
----
 
 ## Final Thoughts
 
