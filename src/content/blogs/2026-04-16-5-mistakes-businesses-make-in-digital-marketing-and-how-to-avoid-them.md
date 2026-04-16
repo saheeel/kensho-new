@@ -9,7 +9,6 @@ excerpt: Businesses often struggle with digital marketing not because they
 ---
 Digital marketing looks simple from the outside. Post some content, run a few ads, maybe hire a freelancer and results should come, right? But for most businesses, it doesn’t work that way. The truth is, it’s not about doing something. It’s about doing the right things consistently.
 
-
 ### 1. Treating Social Media as Just Posting Content
 
 Most businesses think being active means posting regularly. So they post random designs, festival creatives, or occasional product photos and expect growth.
