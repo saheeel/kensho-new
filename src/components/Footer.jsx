@@ -6,6 +6,10 @@ import './Footer.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import { Instagram, Facebook, Linkedin } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Footer = () => {
   const footerRef = useRef(null);
 
@@ -54,6 +58,12 @@ const Footer = () => {
           <h4>GET IN TOUCH</h4>
           <a href="mailto:info@kenshomediagroup.com">info@kenshomediagroup.com</a>
           <a href="tel:97450590808">(+974) 5059 0808</a>
+          
+          <div className="footer-socials">
+            <a href="https://www.instagram.com/kenshomedia.qa" target="_blank" rel="noopener noreferrer" className="social-link"><Instagram size={18} /></a>
+            <a href="https://www.facebook.com/people/Kensho-Media/100093452855409/" target="_blank" rel="noopener noreferrer" className="social-link"><Facebook size={18} /></a>
+            <a href="https://www.linkedin.com/company/kensho-media-qatar/" target="_blank" rel="noopener noreferrer" className="social-link"><Linkedin size={18} /></a>
+          </div>
         </div>
         <div className="footer-col">
           <h4>NAVIGATION</h4>

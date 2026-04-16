@@ -91,3 +91,31 @@
   color: var(--text-primary);
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
+
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-link {
+  color: var(--text-primary);
+  opacity: 0.6;
+  transition: all 0.4s ease;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+  opacity: 1;
+  color: var(--accent-primary) !important;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-primary);
+  transform: translateY(-5px);
+}
