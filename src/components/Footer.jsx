@@ -55,12 +55,6 @@ const Footer = () => {
           <h4>GET IN TOUCH</h4>
           <a href="mailto:info@kenshomediagroup.com">info@kenshomediagroup.com</a>
           <a href="tel:97450590808">(+974) 5059 0808</a>
-          
-          <div className="footer-socials">
-            <a href="https://www.instagram.com/kenshomedia.qa" target="_blank" rel="noopener noreferrer" className="social-link"><Instagram size={18} /></a>
-            <a href="https://www.facebook.com/people/Kensho-Media/100093452855409/" target="_blank" rel="noopener noreferrer" className="social-link"><Facebook size={18} /></a>
-            <a href="https://www.linkedin.com/company/kensho-media-qatar/" target="_blank" rel="noopener noreferrer" className="social-link"><Linkedin size={18} /></a>
-          </div>
         </div>
         <div className="footer-col">
           <h4>NAVIGATION</h4>
@@ -68,6 +62,18 @@ const Footer = () => {
           <Link to="/about">Our Agency</Link>
           <Link to="/blogs">Insights</Link>
           <Link to="/contact">Talk To Us</Link>
+        </div>
+        <div className="footer-col">
+          <h4>FOLLOW US</h4>
+          <a href="https://www.instagram.com/kenshomedia.qa" target="_blank" rel="noopener noreferrer" className="social-link">
+            <span>INSTAGRAM</span>
+          </a>
+          <a href="https://www.facebook.com/people/Kensho-Media/100093452855409/" target="_blank" rel="noopener noreferrer" className="social-link">
+            <span>FACEBOOK</span>
+          </a>
+          <a href="https://www.linkedin.com/company/kensho-media-qatar/" target="_blank" rel="noopener noreferrer" className="social-link">
+            <span>LINKEDIN</span>
+          </a>
         </div>
       </div>
 

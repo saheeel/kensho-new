@@ -706,21 +706,18 @@
     flex-direction: column;
     padding: 3rem 0;
     gap: 1.5rem;
-    align-items: flex-start; /* Left align everything on mobile */
   }
 
   .service-inline-img {
     order: -2; /* Force image to the very top */
     height: 350px;
     margin-top: 0;
-    width: 100%;
   }
 
   .service-number {
     order: -1; /* Number below image, above title */
     padding-top: 0.5rem;
     font-size: 1rem;
-    text-align: left;
   }
 
   .service-name {
