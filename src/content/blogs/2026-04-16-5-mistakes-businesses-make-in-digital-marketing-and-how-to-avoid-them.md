@@ -11,9 +11,7 @@ Digital marketing looks simple from the outside. Post some content, run a few ad
 
 ### 1. Treating Social Media as Just Posting Content
 
-Most businesses think being active means posting regularly. So they post random designs, festival creatives, or occasional product photos and expect growth.
-
-The problem isn’t consistency. It’s direction.
+Most businesses think being active means posting regularly. So they post random designs, festival creatives, or occasional product photos and expect growth. The problem isn’t consistency. It’s direction.
 Every piece of content should have a purpose:
 
 - Awareness  
@@ -25,9 +23,7 @@ Without a clear strategy, even daily posting won’t lead to real results.
 
 ### 2. Expecting Instant Results
 
-A lot of businesses give up too early. They try digital marketing for a month or two and say, “It’s not working.”
-
-But digital growth doesn’t work like that:
+A lot of businesses give up too early. They try digital marketing for a month or two and say, “It’s not working.” But digital growth doesn’t work like that:
 
 - SEO takes time  
 - Content needs consistency  
@@ -38,7 +34,6 @@ Instead of chasing quick wins, focus on long-term growth. That’s where real re
 ### 3. Ignoring Content Quality
 
 There’s a big difference between posting and creating content.
-
 Low-effort visuals, unclear messaging, or poor-quality videos can actually harm your brand. People judge your business based on what they see online.
 
 Focus on:
@@ -53,9 +48,7 @@ Good content doesn’t just get attention. It builds credibility.
 
 ### 4. Not Understanding Your Audience
 
-Many businesses create content based on what they like, not what their audience needs. That’s why posts don’t get engagement and campaigns don’t convert.
-
-Ask yourself:
+Many businesses create content based on what they like, not what their audience needs. That’s why posts don’t get engagement and campaigns don’t convert. Ask yourself:
 
 - Who is your audience?  
 - What problems do they have?  
@@ -76,7 +69,6 @@ Businesses try:
 - Video content  
 
 All at once, without a clear plan.
-
 The result is effort everywhere and results nowhere.
 
 Instead, focus on:
