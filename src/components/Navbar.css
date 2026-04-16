@@ -329,6 +329,18 @@
   .menu-trigger {
     display: block;
   }
+  .nav-brand img {
+    height: 28px; /* Smaller logo on mobile resting */
+  }
+  .nav-brand::before {
+    height: 28px;
+  }
+  .navbar.scrolled .nav-brand img {
+    height: 22px; /* Even smaller on scroll */
+  }
+  .navbar.scrolled .nav-brand::before {
+    height: 22px;
+  }
 }
 
 @media (min-width: 769px) {

@@ -1,13 +1,13 @@
 .whatsapp-float {
   position: fixed;
   bottom: 40px;
-  left: 40px;
+  right: 40px;
   z-index: 9999;
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  group-hover: opacity 1;
 }
 
 .whatsapp-btn {
@@ -42,7 +42,7 @@
   border-radius: 4px;
   text-transform: uppercase;
   opacity: 0;
-  transform: translateX(-10px);
+  transform: translateX(10px);
   transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   pointer-events: none;
   white-space: nowrap;
@@ -67,7 +67,7 @@
 @media (max-width: 768px) {
   .whatsapp-float {
     bottom: 25px;
-    left: 25px;
+    right: 25px;
   }
   
   .whatsapp-btn {
