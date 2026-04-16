@@ -39,7 +39,7 @@ const Blogs = () => {
     <div className="blogs-page">
       <div className="container">
         <div className="blogs-header animate-fade-in-up">
-          <h1>Latest <span className="text-accent">Insights.</span></h1>
+          <h1>Our <span className="text-accent">Blogs.</span></h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
             Thoughts, strategies, and trends from the forefront of digital marketing.
           </p>

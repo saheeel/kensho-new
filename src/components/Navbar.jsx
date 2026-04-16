@@ -71,8 +71,8 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/blogs" className="nav-item hover-target" data-text="INSIGHTS">
-              <span>INSIGHTS</span>
+            <NavLink to="/blogs" className="nav-item hover-target" data-text="BLOGS">
+              <span>BLOGS</span>
             </NavLink>
           </li>
           <li>
@@ -107,7 +107,7 @@ const Navbar = () => {
               <NavLink to="/about" className="mobile-nav-item hover-target">OUR AGENCY</NavLink>
             </li>
             <li>
-              <NavLink to="/blogs" className="mobile-nav-item hover-target">INSIGHTS</NavLink>
+              <NavLink to="/blogs" className="mobile-nav-item hover-target">BLOGS</NavLink>
             </li>
             <li>
               <NavLink to="/contact" className="mobile-nav-item hover-target">TALK TO US</NavLink>

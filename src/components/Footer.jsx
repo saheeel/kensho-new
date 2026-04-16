@@ -59,7 +59,7 @@ const Footer = () => {
           <h4>NAVIGATION</h4>
           <Link to="/">Home</Link>
           <Link to="/about">Our Agency</Link>
-          <Link to="/blogs">Insights</Link>
+          <Link to="/blogs">Blogs</Link>
           <Link to="/contact">Talk To Us</Link>
         </div>
         <div className="footer-col">

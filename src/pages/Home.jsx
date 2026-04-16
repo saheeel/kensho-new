@@ -335,7 +335,7 @@ const Home = () => {
 
         <section className="news-section">
           <div className="news-header">
-            <h3>LATEST INSIGHTS</h3>
+            <h3>LATEST BLOGS</h3>
             <Link to="/blogs" className="btn-sleek">VIEW ALL NEWS →</Link>
           </div>
           <div className="news-grid">
