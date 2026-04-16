@@ -170,8 +170,14 @@
   font-weight: 500;
 }
 
-.blog-article-content ul, 
+.blog-article-content ul {
+  list-style-type: disc;
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+}
+
 .blog-article-content ol {
+  list-style-type: decimal;
   margin-bottom: 2.5rem;
   padding-left: 1.5rem;
 }
@@ -179,6 +185,7 @@
 .blog-article-content li {
   margin-bottom: 1rem;
   color: var(--text-secondary);
+  padding-left: 0.5rem;
 }
 
 .blog-article-content blockquote {
