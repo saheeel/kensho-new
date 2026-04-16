@@ -56,8 +56,6 @@ Many businesses create content based on what they like, not what their audience 
 
 Good marketing always starts with understanding people.
 
----
-
 ### 5. Trying to Do Everything Without a Strategy
 
 This is the biggest mistake.
