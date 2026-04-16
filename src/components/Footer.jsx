@@ -2,11 +2,8 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import './Footer.css';
-
-gsap.registerPlugin(ScrollTrigger);
-
 import { Instagram, Facebook, Linkedin } from 'lucide-react';
+import './Footer.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
