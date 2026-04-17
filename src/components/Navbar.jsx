@@ -116,7 +116,7 @@ const Navbar = () => {
           
           <div className="mobile-menu-footer">
             <p>Doha, Qatar</p>
-            <p className="mobile-menu-email">hello@kenshomedia.com</p>
+            <p className="mobile-menu-email">Info@kenshomediagroup.com</p>
           </div>
         </div>
       </div>

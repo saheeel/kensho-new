@@ -4,7 +4,7 @@ import './WhatsAppFloat.css';
 const WhatsAppFloat = () => {
   const [isVisible, setIsVisible] = useState(false);
   const phoneNumber = "97450590808";
-  const message = "Hi Kensho Media, I'd like to discuss a project.";
+  const message = "Hello Kensho Media! I'm interested in your creative services. Could we discuss how we can collaborate?";
   const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   useEffect(() => {
