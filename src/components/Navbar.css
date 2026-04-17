@@ -133,12 +133,30 @@
   transform-origin: left;
 }
 
+/* CTA Button Styling */
+.nav-item.nav-cta {
+  border: 1px solid var(--accent-primary);
+  padding: 0.6rem 1.4rem;
+  border-radius: 100px;
+  color: var(--accent-primary);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.nav-item.nav-cta:hover {
+  background-color: var(--accent-primary);
+  color: #000;
+}
+
+.nav-item.nav-cta::after {
+  display: none;
+}
+
 /* ACTIVE State: Color only, NO underline */
 .nav-item.active {
   color: var(--accent-primary) !important;
 }
 
-.nav-item.active::after {
+.nav-item.active:not(.nav-cta)::after {
   display: none !important;
 }
 

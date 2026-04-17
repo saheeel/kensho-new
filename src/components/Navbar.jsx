@@ -76,7 +76,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" className="nav-item hover-target" data-text="TALK TO US">
+            <NavLink to="/contact" className="nav-item nav-cta hover-target" data-text="TALK TO US">
               <span>TALK TO US</span>
             </NavLink>
           </li>
