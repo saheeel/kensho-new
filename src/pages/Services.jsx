@@ -152,6 +152,12 @@ const Services = () => {
         <div className="service-border-line"></div>
       </section>
 
+      <section className="service-full-image">
+        <div className="full-image-wrapper">
+          <img src="/kenshomediaservice.webp" alt="Kensho Media Quality Service" />
+        </div>
+      </section>
+
       <section className="methodology-minimal">
         <div className="container">
           <div className="method-grid">
