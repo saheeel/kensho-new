@@ -9,22 +9,52 @@ body {
   color: #1a1a1a !important;
 }
 
-/* Sidebar & Header - Keep them clean and professional */
-.nc-app-header-container, 
-.nc-sidebar-container,
-.nc-collectionPage-sidebar {
-  background-color: #ffffff !important;
-  border-right: 1px solid rgba(0,0,0,0.05) !important;
+/* FULL WIDTH LIST OVERRIDE */
+.nc-app-container > div {
+  max-width: none !important;
+  padding: 0 40px !important;
 }
 
-/* The Editor Pane (Left side) */
-.nc-controlPane-control {
-  background-color: #ffffff !important;
-  border: 1px solid rgba(0,0,0,0.05) !important;
-  border-radius: 8px !important;
-  margin-bottom: 2rem !important;
-  padding: 1.5rem !important;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02) !important;
+.nc-collectionPage-collectionTop,
+.nc-collectionPage-list,
+.nc-collectionPage-main {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Transform List Items into Modern Table Rows */
+.nc-collectionPage-listCard {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid #eee !important;
+  box-shadow: none !important;
+  padding: 1rem 1.5rem !important;
+}
+
+.nc-collectionPage-listCard:hover {
+  background-color: #fafafa !important;
+}
+
+/* Column Styling for Title | Date */
+.nc-collectionPage-listCard h2 {
+  font-size: 1rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  color: #111 !important;
+  font-weight: 500 !important;
+}
+
+.nc-collectionPage-listCard h2::after {
+  content: 'EDIT POST →';
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #15a896;
+  letter-spacing: 0.1em;
 }
 
 /* Better Field Labels */
