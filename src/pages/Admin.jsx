@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 
 const Admin = () => {
   useEffect(() => {
-    // Force a complete page reload to the static CMS file
-    // This prevents React from interfering with the CMS's DOM manipulation
-    window.location.href = '/admin/index.html';
+    // Force a complete page reload to the static CMS directory
+    // This prevents React from interfering and keeps the URL cleaner
+    window.location.href = '/admin/';
   }, []);
 
   return null;
