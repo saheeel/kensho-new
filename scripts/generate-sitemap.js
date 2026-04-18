@@ -6,7 +6,7 @@ const BLOG_DIR = './src/content/blogs';
 const SITEMAP_PATH = './public/sitemap.xml';
 
 const generateSitemap = () => {
-  const date = new Date().toISOString().split('T')[0];
+  const dateStr = new Date().toISOString().split('T')[0];
   
   // Static pages
   const staticPages = [
@@ -17,6 +17,11 @@ const generateSitemap = () => {
   ];
 
   // Get all blog files
+  if (!fs.existsSync(BLOG_DIR)) {
+    console.error(`Blog directory not found: ${BLOG_DIR}`);
+    return;
+  }
+
   const blogFiles = fs.readdirSync(BLOG_DIR).filter(file => file.endsWith('.md'));
   const blogURLs = blogFiles.map(file => {
     const slug = file.replace('.md', '');
@@ -33,7 +38,7 @@ const generateSitemap = () => {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allPages.map(page => `  <url>
     <loc>${BASE_URL}${page.url}</loc>
-    <lastmod>${date}</lastmod>
+    <lastmod>${dateStr}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`).join('\n')}
