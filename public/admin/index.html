@@ -6,9 +6,42 @@
   <meta name="robots" content="noindex" />
   <title>Kensho CMS Portal</title>
   <link href="config.yml" type="text/yaml" rel="cms-config-url">
+  <!-- Brand Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- CMS UI Styling -->
+  <link rel="stylesheet" href="cms.css" />
 </head>
 <body>
-  <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    const BlogPreview = createClass({
+      render: function() {
+        const entry = this.props.entry;
+        const image = entry.getIn(['data', 'image']);
+        const title = entry.getIn(['data', 'title']);
+        const date = entry.getIn(['data', 'date']);
+        const category = entry.getIn(['data', 'category']);
+        const bg = this.props.getAsset(image);
+
+        return h('div', { className: 'cms-preview-wrapper' },
+          h('div', { 
+            className: 'preview-hero',
+            style: { backgroundImage: 'url(' + bg.toString() + ')' }
+          },
+            h('h1', { className: 'preview-title' }, title)
+          ),
+          h('div', { className: 'preview-content' },
+            h('div', { style: { marginBottom: '20px', color: '#15a896', fontWeight: 'bold' }}, 
+              category ? category.toUpperCase() : ''
+            ),
+            this.props.widgetFor('body')
+          )
+        );
+      }
+    });
+
+    CMS.registerPreviewTemplate("blog", BlogPreview);
+    CMS.registerPreviewStyle("cms.css");
+  </script>
 </body>
 </html>

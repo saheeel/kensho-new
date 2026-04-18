@@ -1,0 +1,111 @@
+/* 
+  KENSHO MEDIA CMS OVERHAUL
+  This file styles BOTH the CMS UI and the Preview Pane
+*/
+
+/* 1. Global Admin UI Tweaks */
+body {
+  background-color: #050505 !important;
+  color: #ffffff !important;
+}
+
+/* Make the sidebar and top bar dark */
+.nc-app-header-container, 
+.nc-sidebar-container,
+.nc-collectionPage-sidebar {
+  background-color: #0a0a0a !important;
+  border-right: 1px solid #222 !important;
+}
+
+/* Style Buttons to match Kensho Teal */
+.nc-ui-button-primary {
+  background-color: #15a896 !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  border-radius: 4px !important;
+}
+
+/* 2. Blog Preview Specific Styles 
+   This part will be injected into the preview frame
+*/
+
+:root {
+  --accent-primary: #15a896;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+.cms-preview-wrapper {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: var(--font-body);
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.preview-hero {
+  height: 400px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 50px;
+}
+
+.preview-hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(transparent, #050505);
+}
+
+.preview-title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+  color: white;
+}
+
+.preview-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.preview-content h1, .preview-content h2, .preview-content h3 {
+  font-family: var(--font-heading);
+  color: white;
+  text-transform: uppercase;
+  margin-top: 2em;
+}
+
+.preview-content h3 { color: var(--accent-primary); }
+
+.preview-content blockquote {
+  border-left: 3px solid var(--accent-primary);
+  padding-left: 20px;
+  font-style: italic;
+  font-size: 1.4rem;
+  margin: 40px 0;
+  color: white;
+}
+
+.preview-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 20px 0;
+}
