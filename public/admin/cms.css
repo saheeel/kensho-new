@@ -1,83 +1,68 @@
 /* 
   KENSHO MEDIA CMS OVERHAUL
-  This file styles BOTH the CMS UI and the Preview Pane
+  Focus: Clean Light-Mode Editor + Cinematic Dark-Mode Preview
 */
 
-/* 1. Global Admin UI Tweaks */
+/* 1. Global Admin UI Tweaks (Reverted to Light for consistency) */
 body {
-  background-color: #050505 !important;
-  color: #ffffff !important;
+  background-color: #f3f4f6 !important;
+  color: #1a1a1a !important;
 }
 
-/* Sidebar & Header */
+/* Sidebar & Header - Keep them clean and professional */
 .nc-app-header-container, 
 .nc-sidebar-container,
 .nc-collectionPage-sidebar {
-  background-color: #0c0c0c !important;
-  border-right: 1px solid rgba(255,255,255,0.05) !important;
-  box-shadow: none !important;
+  background-color: #ffffff !important;
+  border-right: 1px solid rgba(0,0,0,0.05) !important;
 }
 
 /* The Editor Pane (Left side) */
 .nc-controlPane-control {
-  background-color: transparent !important;
-  border-bottom: 1px solid rgba(255,255,255,0.05) !important;
-  margin-bottom: 2.5rem !important;
-  padding: 0 0 1rem 0 !important;
-  box-shadow: none !important;
-}
-
-.nc-controlPane-widget {
-  background-color: transparent !important;
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.05) !important;
+  border-radius: 8px !important;
+  margin-bottom: 2rem !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02) !important;
 }
 
 /* Better Field Labels */
 .nc-controlPane-label {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: 0.65rem !important;
-  color: #666 !important;
+  font-size: 0.7rem !important;
+  color: #888 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.2em !important;
-  font-weight: 600 !important;
-  margin-bottom: 0.8rem !important;
+  letter-spacing: 0.15em !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
   background-color: transparent !important;
 }
 
-/* Styled Inputs */
+/* Styled Inputs - Light & Clean */
 input, 
 textarea, 
 .nc-widget-markdown {
-  background-color: #1a1a1a !important;
-  border: 1px solid #333 !important;
-  border-radius: 4px !important;
-  color: #fff !important;
+  background-color: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 6px !important;
+  color: #111827 !important;
   font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: 0.95rem !important;
-  padding: 1rem !important;
-  transition: all 0.3s ease !important;
-  width: 100% !important;
+  font-size: 1rem !important;
+  padding: 0.8rem !important;
+  transition: all 0.2s ease !important;
 }
 
 input:focus, 
 textarea:focus {
   border-color: #15a896 !important;
-  background-color: #222 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(21, 168, 150, 0.1) !important;
   outline: none !important;
 }
 
-/* Style Buttons to match Kensho Teal */
-.nc-ui-button-primary {
-  background-color: #15a896 !important;
-  color: #000 !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
-  border-radius: 4px !important;
-  padding: 0.8rem 1.5rem !important;
-}
-
-/* 2. Blog Preview Specific Styles 
-   This part will be injected into the preview frame
+/* 2. Blog Preview Specific Styles (MANDATORY DARK) 
+   This part is injected into the preview frame to match the site
 */
 
 :root {
@@ -89,16 +74,16 @@ textarea:focus {
 }
 
 .cms-preview-wrapper {
-  background-color: #050505;
-  color: #ffffff;
-  font-family: var(--font-body);
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
+  background-color: #050505 !important;
+  color: #ffffff !important;
+  font-family: var(--font-body) !important;
+  min-height: 100vh !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .preview-hero {
-  height: 50vh; /* Scaled down slightly for editor view */
+  height: 60vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -113,7 +98,7 @@ textarea:focus {
   content: '';
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(to bottom, rgba(5,5,5,0.2) 0%, rgba(5,5,5,1) 100%);
+  background: linear-gradient(to bottom, rgba(5,5,5,0.1) 0%, rgba(5,5,5,1) 100%);
   z-index: 1;
 }
 
@@ -121,13 +106,12 @@ textarea:focus {
   position: relative;
   z-index: 2;
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: 3.5rem;
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 1.1;
   margin: 0;
   color: white;
   font-weight: 700;
-  max-width: 1000px;
 }
 
 .preview-meta-row {
@@ -136,16 +120,15 @@ textarea:focus {
   margin-top: 1.5rem;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
 }
 
 .preview-category {
-  padding: 0.4rem 1.2rem;
+  padding: 0.3rem 1rem;
   border: 1px solid var(--accent-primary);
   color: var(--accent-primary);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   border-radius: 100px;
@@ -156,8 +139,8 @@ textarea:focus {
   margin: 0 auto;
   padding: 4rem 2rem;
   font-family: var(--font-body);
-  font-size: 1.15rem;
-  line-height: 1.85;
+  font-size: 1.1rem;
+  line-height: 1.8;
   color: var(--text-secondary);
 }
 
@@ -165,45 +148,10 @@ textarea:focus {
 .preview-content h2, 
 .preview-content h3 {
   font-family: var(--font-heading);
-  color: var(--text-primary);
+  color: #fff;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
-  margin-top: 4rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
+  margin-top: 3rem;
   font-weight: 700;
 }
 
-.preview-content h1 { font-size: 3.5rem; }
-.preview-content h2 { font-size: 2.8rem; }
-.preview-content h3 { font-size: 2rem; color: var(--accent-primary); }
-
-.preview-content p {
-  margin-bottom: 2rem;
-}
-
-.preview-content strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-.preview-content ul, .preview-content ol {
-  margin-bottom: 1.5rem;
-  padding-left: 1.5rem;
-}
-
-.preview-content li {
-  margin-bottom: 0.4rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.preview-content blockquote {
-  border-left: 2px solid var(--accent-primary);
-  padding: 1.5rem 2.5rem;
-  margin: 4rem 0;
-  font-style: italic;
-  font-size: 1.5rem;
-  color: var(--text-primary);
-  background: rgba(21, 168, 150, 0.03);
-}
+.preview-content h3 { color: var(--accent-primary); }
