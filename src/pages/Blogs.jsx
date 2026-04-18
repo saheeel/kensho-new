@@ -70,7 +70,14 @@ const Blogs = () => {
         <div className="blogs-grid">
           {blogs.map((blog, index) => (
             <article key={blog.id} className={`blog-card animate-fade-in-up stagger-${index + 1}`}>
-              <Link to={`/blogs/${blog.id}`} aria-label={`Read: ${blog.title}`}>
+              <Link 
+                to={`/blogs/${blog.id}`} 
+                aria-label={`Read: ${blog.title}`}
+                onMouseEnter={() => {
+                  const img = new Image();
+                  img.src = blog.image;
+                }}
+              >
                 <div className="blog-image">
                   <LazyImage
                     src={blog.image}
