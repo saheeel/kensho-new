@@ -9,12 +9,59 @@ body {
   color: #ffffff !important;
 }
 
-/* Make the sidebar and top bar dark */
+/* Sidebar & Header */
 .nc-app-header-container, 
 .nc-sidebar-container,
 .nc-collectionPage-sidebar {
-  background-color: #0a0a0a !important;
-  border-right: 1px solid #222 !important;
+  background-color: #0c0c0c !important;
+  border-right: 1px solid rgba(255,255,255,0.05) !important;
+  box-shadow: none !important;
+}
+
+/* The Editor Pane (Left side) */
+.nc-controlPane-control {
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+  margin-bottom: 2.5rem !important;
+  padding: 0 0 1rem 0 !important;
+  box-shadow: none !important;
+}
+
+.nc-controlPane-widget {
+  background-color: transparent !important;
+}
+
+/* Better Field Labels */
+.nc-controlPane-label {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.65rem !important;
+  color: #666 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.2em !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.8rem !important;
+  background-color: transparent !important;
+}
+
+/* Styled Inputs */
+input[type="text"], 
+textarea, 
+.nc-widget-markdown {
+  background-color: rgba(255,255,255,0.02) !important;
+  border: 1px solid rgba(255,255,255,0.05) !important;
+  border-radius: 4px !important;
+  color: #fff !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.95rem !important;
+  padding: 1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+input[type="text"]:focus, 
+textarea:focus {
+  border-color: #15a896 !important;
+  background-color: rgba(21, 168, 150, 0.03) !important;
+  outline: none !important;
 }
 
 /* Style Buttons to match Kensho Teal */
@@ -25,6 +72,7 @@ body {
   text-transform: uppercase !important;
   letter-spacing: 0.1em !important;
   border-radius: 4px !important;
+  padding: 0.8rem 1.5rem !important;
 }
 
 /* 2. Blog Preview Specific Styles 
