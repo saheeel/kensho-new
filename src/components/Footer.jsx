@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Footer.css';
+import { prefetchPage } from '../utils/prefetch';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,10 +58,10 @@ const Footer = () => {
         </div>
         <div className="footer-col">
           <h4>NAVIGATION</h4>
-          <Link to="/">Home</Link>
-          <Link to="/about">Our Agency</Link>
-          <Link to="/blogs">Blogs</Link>
-          <Link to="/contact">Talk To Us</Link>
+          <Link to="/" onMouseEnter={() => prefetchPage('/')}>Home</Link>
+          <Link to="/about" onMouseEnter={() => prefetchPage('/about')}>Our Agency</Link>
+          <Link to="/blogs" onMouseEnter={() => prefetchPage('/blogs')}>Blogs</Link>
+          <Link to="/contact" onMouseEnter={() => prefetchPage('/contact')}>Talk To Us</Link>
         </div>
         <div className="footer-col">
           <h4>FOLLOW US</h4>

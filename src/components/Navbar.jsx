@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
+import { prefetchPage } from '../utils/prefetch';
 
 const Navbar = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -55,28 +56,33 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isHidden ? 'hidden' : ''} ${isMobileMenuOpen ? 'menu-open' : ''}`}>
       <div className="container">
-        <Link to="/" className="nav-brand hover-target" data-cursor-text="HOME">
+        <Link 
+          to="/" 
+          className="nav-brand hover-target" 
+          data-cursor-text="HOME"
+          onMouseEnter={() => prefetchPage('/')}
+        >
           <img src="/logo.svg" alt="Kensho Media Logo" />
         </Link>
         
         <ul className="nav-links">
           <li>
-            <NavLink to="/" className="nav-item hover-target" data-text="HOME">
+            <NavLink to="/" className="nav-item hover-target" data-text="HOME" onMouseEnter={() => prefetchPage('/')}>
               <span>HOME</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" className="nav-item hover-target" data-text="OUR AGENCY">
+            <NavLink to="/about" className="nav-item hover-target" data-text="OUR AGENCY" onMouseEnter={() => prefetchPage('/about')}>
               <span>OUR AGENCY</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/blogs" className="nav-item hover-target" data-text="BLOGS">
+            <NavLink to="/blogs" className="nav-item hover-target" data-text="BLOGS" onMouseEnter={() => prefetchPage('/blogs')}>
               <span>BLOGS</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" className="nav-item nav-cta hover-target" data-text="TALK TO US">
+            <NavLink to="/contact" className="nav-item nav-cta hover-target" data-text="TALK TO US" onMouseEnter={() => prefetchPage('/contact')}>
               <span>TALK TO US</span>
             </NavLink>
           </li>
