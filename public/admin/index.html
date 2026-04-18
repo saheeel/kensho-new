@@ -42,39 +42,6 @@
 
     CMS.registerPreviewTemplate("blog", BlogPreview);
     CMS.registerPreviewStyle("cms.css");
-
-    // TABLE VIEW TRANSFORMATION SCRIPT
-    // This watches the CMS list and splits our "##" separator into columns
-    const transformToTable = () => {
-      const cards = document.querySelectorAll('.nc-collectionPage-sidebar + div ul li h2, .nc-card-list-item h2');
-      
-      cards.forEach(card => {
-        const text = card.innerText;
-        if (text.includes('##')) {
-          const parts = text.split('##').map(p => p.trim());
-          const title = parts[0];
-          const dateFull = parts[1];
-          const slug = parts[2];
-
-          // Format Date (Remove time if exists)
-          const dateOnly = dateFull.split(' ')[0] || dateFull;
-
-          card.innerHTML = `
-            <div class="cms-table-row">
-              <div class="cms-col-title">${title}</div>
-              <div class="cms-col-date">${dateOnly}</div>
-              <div class="cms-col-link">
-                <a href="https://kenshomediagroup.com/blogs/${slug}" target="_blank" class="cms-view-btn">VIEW PAGE →</a>
-              </div>
-            </div>
-          `;
-        }
-      });
-    };
-
-    // Run the transformation whenever the page changes
-    const observer = new MutationObserver(transformToTable);
-    observer.observe(document.body, { childList: true, subtree: true });
   </script>
 </body>
 </html>
