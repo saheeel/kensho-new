@@ -1,8 +1,30 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import './Blogs.css';
 import matter from 'gray-matter';
 import { Buffer } from 'buffer';
+
+// Progressively Loaded Image Component
+const LazyImage = ({ src, alt, width, height }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div className={`lazy-image-container ${isLoaded ? 'loaded' : 'loading'}`}>
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setIsLoaded(true)}
+      />
+      <div className="blur-placeholder"></div>
+    </div>
+  );
+};
+
 
 // Fix for gray-matter in some vite environments
 if (typeof window !== 'undefined') {
@@ -50,11 +72,9 @@ const Blogs = () => {
             <article key={blog.id} className={`blog-card animate-fade-in-up stagger-${index + 1}`}>
               <Link to={`/blogs/${blog.id}`} aria-label={`Read: ${blog.title}`}>
                 <div className="blog-image">
-                  <img
+                  <LazyImage
                     src={blog.image}
                     alt={blog.title}
-                    loading="lazy"
-                    decoding="async"
                     width="600"
                     height="280"
                   />
