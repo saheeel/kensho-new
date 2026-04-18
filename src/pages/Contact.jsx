@@ -7,6 +7,7 @@ const Contact = () => {
   const [status, setStatus] = useState(""); // "", "sending", "success", "error"
 
   useEffect(() => {
+    document.title = "Contact Kensho Media | Start Your Story in Doha, Qatar";
     gsap.fromTo('.clip-text-inner-contact', 
       { y: '110%' },
       { y: '0%', duration: 1.5, stagger: 0.1, ease: 'expo.out', delay: 0.2 }

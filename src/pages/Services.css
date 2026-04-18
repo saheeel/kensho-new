@@ -1,0 +1,233 @@
+.services-page {
+  padding-top: 15vh;
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.aura-glow {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(21, 168, 150, 0.03) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+  animation: auraFloat 20s infinite alternate ease-in-out;
+}
+
+@keyframes auraFloat {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-5vw, 10vh); }
+}
+
+.bg-parallax-num {
+  position: absolute;
+  right: 5vw;
+  top: 50%;
+  font-family: var(--font-heading);
+  font-size: 25vw;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.02);
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.about-hero {
+  padding: 10vh 5vw;
+  position: relative;
+  z-index: 2;
+}
+
+.about-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 10vw, 12rem);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  margin-bottom: 2rem;
+}
+
+.about-manifesto {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  color: var(--text-secondary);
+  max-width: 800px;
+  line-height: 1.7;
+  margin-left: auto;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.about-manifesto .text-accent {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-transform: lowercase;
+}
+
+.clip-text {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.clip-text-inner-about {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* List Styling */
+.service-row {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.service-border-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  transform-origin: left;
+}
+
+.service-grid-minimal {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 4rem;
+  padding-top: 4rem;
+}
+
+.service-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-meta span:first-child {
+  font-family: var(--font-heading);
+  color: var(--accent-primary);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+.service-sub-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.service-main-content h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.service-main-content p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin-bottom: 3rem;
+}
+
+.service-footer-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.feature-tags {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.feature-tags span {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.service-cta-link {
+  font-family: var(--font-heading);
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.service-cta-link:hover {
+  border-color: var(--accent-primary);
+  padding-right: 1rem;
+}
+
+/* Methodology Minimal */
+.methodology-minimal {
+  padding: 20vh 0;
+  background: #080808;
+}
+
+.method-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10vw;
+}
+
+.method-header h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin-top: 2rem;
+}
+
+.method-steps-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.m-step h4 {
+  font-family: var(--font-heading);
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.m-step p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .service-grid-minimal {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .method-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .method-steps-list {
+    grid-template-columns: 1fr;
+  }
+}

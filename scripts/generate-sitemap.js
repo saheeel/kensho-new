@@ -12,6 +12,7 @@ const generateSitemap = () => {
   const staticPages = [
     { url: '/', priority: '1.0', changefreq: 'weekly' },
     { url: '/about', priority: '0.8', changefreq: 'monthly' },
+    { url: '/services', priority: '0.8', changefreq: 'monthly' },
     { url: '/blogs', priority: '0.9', changefreq: 'weekly' },
     { url: '/contact', priority: '0.7', changefreq: 'monthly' },
   ];

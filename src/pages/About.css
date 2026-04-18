@@ -22,12 +22,13 @@
 
 .about-manifesto {
   font-family: var(--font-body);
-  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   color: var(--text-secondary);
-  max-width: 900px;
-  line-height: 1.4;
+  max-width: 800px;
+  line-height: 1.7;
   margin-left: auto;
   font-weight: 300;
+  letter-spacing: 0.01em;
 }
 
 .about-manifesto .text-accent {

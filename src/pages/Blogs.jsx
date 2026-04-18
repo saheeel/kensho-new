@@ -57,6 +57,10 @@ const Blogs = () => {
     }
   }).filter(blog => blog !== null).sort((a, b) => new Date(b.date) - new Date(a.date));
 
+  useEffect(() => {
+    document.title = "Our Blogs | Insights on Digital Marketing & Social Media – Kensho Media";
+  }, []);
+
   return (
     <div className="blogs-page">
       <div className="container">

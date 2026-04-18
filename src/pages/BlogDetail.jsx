@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, User } from 'lucide-react';
 import './BlogDetail.css';
@@ -37,6 +38,12 @@ const BlogDetail = () => {
     author: data.author || "Kensho Team",
     readTime: data.readTime || "5 min read"
   };
+
+  useEffect(() => {
+    if (blog.title) {
+      document.title = `${blog.title} | Kensho Media Insights`;
+    }
+  }, [blog.title]);
 
   return (
     <div className="blog-detail-page">

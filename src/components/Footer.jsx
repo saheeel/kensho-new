@@ -60,6 +60,7 @@ const Footer = () => {
           <h4>NAVIGATION</h4>
           <Link to="/" onMouseEnter={() => prefetchPage('/')}>Home</Link>
           <Link to="/about" onMouseEnter={() => prefetchPage('/about')}>Our Agency</Link>
+          <Link to="/services" onMouseEnter={() => prefetchPage('/services')}>Services</Link>
           <Link to="/blogs" onMouseEnter={() => prefetchPage('/blogs')}>Blogs</Link>
           <Link to="/contact" onMouseEnter={() => prefetchPage('/contact')}>Talk To Us</Link>
         </div>
