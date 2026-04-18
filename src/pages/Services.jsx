@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { prefetchPage } from '../utils/prefetch';
 import'./Services.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -142,7 +143,7 @@ const Services = () => {
                        <div className="feature-tags">
                         {service.features.map(f => <span key={f}>{f}</span>)}
                        </div>
-                       <a href="/contact" className="service-cta-link">INITIATE INQUIRY →</a>
+                       <a href="/contact" className="service-cta-link" onMouseEnter={() => prefetchPage('/contact')}>INITIATE INQUIRY →</a>
                     </div>
                   </div>
                </div>
