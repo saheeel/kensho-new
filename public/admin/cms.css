@@ -156,3 +156,24 @@ body {
 }
 
 .preview-content h3 { color: var(--accent-primary); }
+
+.live-view-btn {
+  display: inline-block;
+  margin-bottom: 3rem;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.live-view-btn:hover {
+  background-color: var(--accent-primary);
+  color: #000;
+}
+
