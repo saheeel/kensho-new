@@ -28,12 +28,12 @@
             className: 'preview-hero',
             style: { backgroundImage: 'url(' + bg.toString() + ')' }
           },
-            h('h1', { className: 'preview-title' }, title)
+            h('h1', { className: 'preview-title' }, title),
+            h('div', { className: 'preview-meta-row' },
+              category ? h('div', { className: 'preview-category' }, category.toUpperCase()) : null
+            )
           ),
           h('div', { className: 'preview-content' },
-            h('div', { style: { marginBottom: '20px', color: '#15a896', fontWeight: 'bold' }}, 
-              category ? category.toUpperCase() : ''
-            ),
             this.props.widgetFor('body')
           )
         );
