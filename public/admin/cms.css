@@ -40,8 +40,8 @@ body {
 }
 
 /* Styled Inputs - Light & Clean */
-input, 
-textarea, 
+.nc-controlPane-control input, 
+.nc-controlPane-control textarea, 
 .nc-widget-markdown {
   background-color: #f9fafb !important;
   border: 1px solid #e5e7eb !important;
@@ -51,10 +51,11 @@ textarea,
   font-size: 1rem !important;
   padding: 0.8rem !important;
   transition: all 0.2s ease !important;
+  width: 100% !important;
 }
 
-input:focus, 
-textarea:focus {
+.nc-controlPane-control input:focus, 
+.nc-controlPane-control textarea:focus {
   border-color: #15a896 !important;
   background-color: #ffffff !important;
   box-shadow: 0 0 0 3px rgba(21, 168, 150, 0.1) !important;
