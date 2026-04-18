@@ -221,7 +221,7 @@ const Home = () => {
             
             <div className="hero-sub clip-text">
               <span className="clip-text-inner" ref={el => heroTextRefs.current[2] = el}>
-                Next-generation<br/>Creative Agency<br/>Doha, Qatar
+                Social Media Marketing<br/>& Digital Agency<br/>Doha, Qatar
               </span>
             </div>
           </div>
@@ -249,7 +249,7 @@ const Home = () => {
             <div className="who-scroll-col">
               <div className="who-block">
                 <h3>01 / WHO WE ARE</h3>
-                <p>Kensho Media is a dynamic digital marketing agency based in Qatar, committed to empowering businesses to thrive in the digital age. Since 2024, we remain obsessed with crafting innovative and results-driven digital solutions tailored to your absolute finest standards. In a world where attention is currency, we foster genuine community growth rather than temporary likes.</p>
+                <p>Kensho Media is the premier social media marketing and digital agency based in Qatar. Since 2024, we have been committed to empowering brands with innovative social media management, SEO, and results-driven digital solutions tailored for the Doha market. In a world where attention is currency, we foster genuine community growth through cinematic storytelling.</p>
               </div>
               <div className="who-block">
                 <h3>02 / BEHIND THE BRAND</h3>
