@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
+import CustomCursor from './components/CustomCursor';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,13 +50,27 @@ function App() {
     // Scroll to top on route change
     lenis.scrollTo(0, { immediate: true });
 
+    // Dynamic selection color logic
+    const selectionColors = ['#15a896', '#8b5cf6', '#f97316', '#ec4899', '#2563eb'];
+    let colorIndex = 0;
+
+    const handleSelectionColor = () => {
+      const nextColor = selectionColors[colorIndex];
+      document.documentElement.style.setProperty('--selection-bg', nextColor);
+      colorIndex = (colorIndex + 1) % selectionColors.length;
+    };
+
+    window.addEventListener('mousedown', handleSelectionColor);
+
     return () => {
       lenis.destroy();
+      window.removeEventListener('mousedown', handleSelectionColor);
     };
   }, [location.pathname]);
 
   return (
     <>
+      {!isAdmin && <CustomCursor />}
       {!isAdmin && <Navbar />}
       <main data-scroll-container={!isAdmin ? 'true' : 'false'}>
         <Suspense fallback={<div style={{ minHeight: '100vh', background: '#050505' }} />}>

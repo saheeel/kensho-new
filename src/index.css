@@ -10,6 +10,17 @@
 
   --font-heading: 'Oswald', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
+  --selection-bg: var(--accent-primary);
+}
+
+::selection {
+  background-color: var(--selection-bg);
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: var(--selection-bg);
+  color: #fff;
 }
 
 * {
@@ -127,4 +138,54 @@ ul {
 .btn-sleek:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/* Custom Cursor Styles - Desktop Only */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: difference;
+    transition: transform 0.30s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+  }
+
+  .custom-cursor.hover {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+  }
+
+  .custom-cursor.hide {
+    opacity: 0;
+  }
+
+  /* Hide default cursor only on devices that support hover */
+  body {
+    cursor: none;
+  }
+
+  a, button, [role="button"], .hover-target {
+    cursor: none !important;
+  }
+}
+
+/* Fallback/Default for touch devices */
+@media (hover: none) or (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+  body, a, button {
+    cursor: auto !important;
+  }
 }
