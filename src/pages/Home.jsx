@@ -259,26 +259,29 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="kensho-one-teaser" aria-labelledby="kensho-one-teaser-title">
+        <section className="kensho-one-teaser kensho-one-hidden" aria-labelledby="kensho-one-teaser-title">
+          <div className="kensho-one-teaser-bg" aria-hidden="true"></div>
           <div className="kensho-one-teaser-copy">
-            <p className="kensho-one-kicker">New launch / brand pitstop</p>
-            <h2 id="kensho-one-teaser-title">Kensho One</h2>
+            <p className="kensho-one-kicker">New flagship / brand launch pitstop</p>
+            <h2 id="kensho-one-teaser-title">
+              Kensho <span>One</span>
+            </h2>
             <p>
-              One partner for everything your brand needs: concept, identity, location, interiors, fit-out,
-              launch, marketing, and long-term growth.
+              A founder-ready launch desk for brands that need one partner to shape the concept,
+              build the identity, guide the setup, launch the market presence, and keep growth moving.
             </p>
+            <Link to="/kensho-one" className="kensho-one-teaser-cta hover-target" data-cursor-text="LAUNCH">
+              Explore the launch desk →
+            </Link>
           </div>
-          <div className="kensho-one-teaser-panel">
+
+          <div className="kensho-one-journey" aria-label="Kensho One launch journey">
             <span>Concept</span>
             <span>Identity</span>
-            <span>Location</span>
-            <span>Interior</span>
+            <span>Setup</span>
             <span>Launch</span>
             <span>Growth</span>
           </div>
-          <Link to="/kensho-one" className="kensho-one-teaser-cta hover-target" data-cursor-text="LAUNCH">
-            Explore Kensho One →
-          </Link>
         </section>
 
         <section className="visual-block-wrapper">

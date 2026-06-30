@@ -66,32 +66,32 @@ const Navbar = () => {
         </Link>
         
         <ul className="nav-links">
-          <li>
+          <li className="nav-standard-link">
             <NavLink to="/" className="nav-item hover-target" data-text="HOME" onMouseEnter={() => prefetchPage('/')}>
               <span>HOME</span>
             </NavLink>
           </li>
-          <li>
+          <li className="nav-standard-link">
             <NavLink to="/about" className="nav-item hover-target" data-text="OUR AGENCY" onMouseEnter={() => prefetchPage('/about')}>
               <span>OUR AGENCY</span>
             </NavLink>
           </li>
-          <li>
+          <li className="nav-standard-link">
             <NavLink to="/services" className="nav-item hover-target" data-text="SERVICES" onMouseEnter={() => prefetchPage('/services')}>
               <span>SERVICES</span>
             </NavLink>
           </li>
-          <li>
+          <li className="nav-launch-link nav-hidden">
             <NavLink to="/kensho-one" className="nav-item nav-launch hover-target" data-text="KENSHO ONE" onMouseEnter={() => prefetchPage('/kensho-one')}>
               <span>KENSHO ONE</span>
             </NavLink>
           </li>
-          <li>
+          <li className="nav-standard-link">
             <NavLink to="/blogs" className="nav-item hover-target" data-text="BLOGS" onMouseEnter={() => prefetchPage('/blogs')}>
               <span>BLOGS</span>
             </NavLink>
           </li>
-          <li>
+          <li className="nav-standard-link">
             <NavLink to="/contact" className="nav-item nav-cta hover-target" data-text="TALK TO US" onMouseEnter={() => prefetchPage('/contact')}>
               <span>TALK TO US</span>
             </NavLink>
@@ -125,7 +125,7 @@ const Navbar = () => {
             <li>
               <NavLink to="/services" className="mobile-nav-item hover-target">SERVICES</NavLink>
             </li>
-            <li>
+            <li className="nav-hidden">
               <NavLink to="/kensho-one" className="mobile-nav-item mobile-nav-launch hover-target">KENSHO ONE</NavLink>
             </li>
             <li>
