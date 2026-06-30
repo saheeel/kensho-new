@@ -259,6 +259,28 @@ const Home = () => {
           </div>
         </section>
 
+        <section className="kensho-one-teaser" aria-labelledby="kensho-one-teaser-title">
+          <div className="kensho-one-teaser-copy">
+            <p className="kensho-one-kicker">New launch / brand pitstop</p>
+            <h2 id="kensho-one-teaser-title">Kensho One</h2>
+            <p>
+              One partner for everything your brand needs: concept, identity, location, interiors, fit-out,
+              launch, marketing, and long-term growth.
+            </p>
+          </div>
+          <div className="kensho-one-teaser-panel">
+            <span>Concept</span>
+            <span>Identity</span>
+            <span>Location</span>
+            <span>Interior</span>
+            <span>Launch</span>
+            <span>Growth</span>
+          </div>
+          <Link to="/kensho-one" className="kensho-one-teaser-cta hover-target" data-cursor-text="LAUNCH">
+            Explore Kensho One →
+          </Link>
+        </section>
+
         <section className="visual-block-wrapper">
           <div className="container">
             <h3 className="section-subtitle animate-fade-in">OUR SQUAD / THE ARCHITECTS</h3>

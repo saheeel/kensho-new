@@ -82,6 +82,11 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/kensho-one" className="nav-item nav-launch hover-target" data-text="KENSHO ONE" onMouseEnter={() => prefetchPage('/kensho-one')}>
+              <span>KENSHO ONE</span>
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/blogs" className="nav-item hover-target" data-text="BLOGS" onMouseEnter={() => prefetchPage('/blogs')}>
               <span>BLOGS</span>
             </NavLink>
@@ -119,6 +124,9 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to="/services" className="mobile-nav-item hover-target">SERVICES</NavLink>
+            </li>
+            <li>
+              <NavLink to="/kensho-one" className="mobile-nav-item mobile-nav-launch hover-target">KENSHO ONE</NavLink>
             </li>
             <li>
               <NavLink to="/blogs" className="mobile-nav-item hover-target">BLOGS</NavLink>

@@ -7,6 +7,7 @@ const prefetchMap = {
   '/': () => import('../pages/Home'),
   '/about': () => import('../pages/About'),
   '/services': () => import('../pages/Services'),
+  '/kensho-one': () => import('../pages/KenshoOne'),
   '/blogs': () => import('../pages/Blogs'),
   '/contact': () => import('../pages/Contact'),
 };
